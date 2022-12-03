@@ -1,0 +1,1454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>360</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>360</width>
+    <height>640</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="MainStack">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>360</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>360</width>
+      <height>640</height>
+     </size>
+    </property>
+    <property name="currentIndex">
+     <number>4</number>
+    </property>
+    <widget class="QWidget" name="Startpg">
+     <widget class="QPushButton" name="playBtn">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>170</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Play</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="lbBtn">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>220</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Leaderboards</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="aboutusBtn">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>270</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>About Us</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="titleLbl">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>80</y>
+        <width>41</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="categorypg">
+     <widget class="QLabel" name="diffLbl">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>120</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Difficulty:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="qnLbl">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>190</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Number of Questions</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="diffCBox">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>120</y>
+        <width>171</width>
+        <height>26</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="nextBtn">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>300</y>
+        <width>93</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>next</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="catLbl">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Category:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="quesnumCBox">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>190</y>
+        <width>151</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="catCBox">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>60</y>
+        <width>171</width>
+        <height>26</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="readypg">
+     <widget class="QPushButton" name="readyBtn">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>270</y>
+        <width>80</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ready</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="instrucLbl">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>100</y>
+        <width>41</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>instruc</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="quizpg">
+     <widget class="QStackedWidget" name="diffStacked">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>311</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:rgb(170, 170, 255)</string>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="multipg">
+       <widget class="QPushButton" name="aBtn">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>20</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:rgb(170, 85, 255);</string>
+        </property>
+        <property name="text">
+         <string>A</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="bBtn">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>60</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:rgb(170, 85, 255);</string>
+        </property>
+        <property name="text">
+         <string>B</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="cBtn">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>100</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:rgb(170, 85, 255);</string>
+        </property>
+        <property name="text">
+         <string>C</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="dbtn">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>140</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:rgb(170, 85, 255);</string>
+        </property>
+        <property name="text">
+         <string>D</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="identipg">
+       <widget class="QLineEdit" name="identiLine">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>60</y>
+          <width>271</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>120</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Submit</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tofpg">
+       <widget class="QPushButton" name="trueBtn">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>50</y>
+          <width>201</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:rgb(85, 0, 255)</string>
+        </property>
+        <property name="text">
+         <string>True</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="falseBtn">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>100</y>
+          <width>201</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:rgb(85, 0, 255);</string>
+        </property>
+        <property name="text">
+         <string>False</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="qstnLbl">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>60</y>
+        <width>281</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 0, 0)</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pauseBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Pause</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="scoreLbl">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>10</y>
+        <width>63</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Score:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="scoreNum">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>10</y>
+        <width>41</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>scoreLbl</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="timeLbl">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>40</y>
+        <width>41</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>time</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="categoryLbl">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>20</y>
+        <width>41</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>category</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="quesNumLbl">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>130</y>
+        <width>41</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>quesnum</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="pausepg">
+     <widget class="QPushButton" name="resueBtn">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>110</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Resume</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="retryBtn_3">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>160</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Retry</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="menuBtn">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>210</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Main Menu</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="resultspg">
+     <widget class="QLineEdit" name="name_inp">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>220</y>
+        <width>113</width>
+        <height>26</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="nameLbl">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>220</y>
+        <width>63</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Name: </string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="caLbl">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>140</y>
+        <width>63</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="scrLbl">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>170</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Score:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="remarksLbl">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>40</y>
+        <width>111</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Remarks</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="caText">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>130</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Correct Answer/s:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="scre">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>170</y>
+        <width>63</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="loginpg">
+     <widget class="QStackedWidget" name="ls_box">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>321</width>
+        <height>251</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="login_top">
+       <widget class="QLabel" name="name_lbl">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>63</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>name:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="pass_lbl">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>90</y>
+          <width>91</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>password:</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="login_btn">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>180</y>
+          <width>93</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Login</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="name_inp_auth">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>40</y>
+          <width>161</width>
+          <height>26</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="pass_inp_auth">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>90</y>
+          <width>161</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>220</y>
+          <width>131</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Check lang</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="error_msg_l">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>140</y>
+          <width>271</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="sign_up_top">
+       <widget class="QLabel" name="name_lbl_s">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>63</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>name:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="pass_lbl_s">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>80</y>
+          <width>81</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>password:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="pass_lbl_s_c">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>120</y>
+          <width>131</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>confirm password:</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="signup_btn">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>180</y>
+          <width>93</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Sign Up</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="name_inp_auth_s">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>40</y>
+          <width>141</width>
+          <height>26</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="pass_inp_auth_s">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>80</y>
+          <width>141</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="cpass_">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>120</y>
+          <width>141</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="userLbl">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>220</y>
+          <width>111</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Insert into user</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="error_msg">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>160</y>
+          <width>271</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="sign_sec">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>40</y>
+        <width>151</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Sign-up</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="login_sec">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>151</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Login</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="lsbackBtn">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>80</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="addeditpg">
+     <widget class="QStackedWidget" name="addeditStack">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>100</y>
+        <width>321</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="addStack">
+       <widget class="QWidget" name="layoutWidget_7">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>231</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="categoryLayout">
+         <item>
+          <widget class="QLabel" name="addcategoryLbl">
+           <property name="text">
+            <string>category</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="categorylineEdit">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget_8">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>171</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="nameLayout">
+         <item>
+          <widget class="QLabel" name="nameLbl_3">
+           <property name="text">
+            <string>name</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="namelineEdit">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLineEdit" name="noteTextbox">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>120</y>
+          <width>231</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="readOnly">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="addnoteLbl">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>120</y>
+          <width>58</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>note</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget_9">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>80</y>
+          <width>250</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="reviewerLayout">
+         <item>
+          <widget class="QLabel" name="label_17">
+           <property name="text">
+            <string>reviewer</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="reviewereditLine"/>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_12"/>
+         </item>
+         <item>
+          <widget class="QToolButton" name="reviewerBtn">
+           <property name="text">
+            <string>...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLabel" name="onadderrorLbl">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>170</y>
+          <width>101</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="nextBtn_3">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>180</y>
+          <width>93</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Next</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="editStack">
+       <widget class="QListView" name="editlistView">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>291</width>
+          <height>131</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="editBtn">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>190</y>
+          <width>80</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Edit</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="delBtn">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>190</y>
+          <width>80</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="cstmbackBtn">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="editIndex">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>50</y>
+        <width>151</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Edit/Delete</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addIndex">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>50</y>
+        <width>151</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Add</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="addpg">
+     <widget class="QLabel" name="addcatLbl">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>63</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>category</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="nameLbl_4">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>30</y>
+        <width>63</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>name</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="questionLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>110</y>
+        <width>321</width>
+        <height>91</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="qnoLbl">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>30</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>question no.</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="quesText">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>63</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Question</string>
+      </property>
+     </widget>
+     <widget class="QStackedWidget" name="optionCBox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>200</y>
+        <width>321</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 170, 255);</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tofStacked">
+       <widget class="QPushButton" name="addtrueBtn">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>40</y>
+          <width>93</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>True</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="addfalseBtn">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>40</y>
+          <width>93</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>False</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="multiStacked">
+       <widget class="QPushButton" name="addaBtn">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>31</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>A</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="addbBtn">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>60</y>
+          <width>31</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>B</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="addcBtn">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>10</y>
+          <width>31</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>C</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="adddBtn">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>60</y>
+          <width>31</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>D</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="alineEdit">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>10</y>
+          <width>71</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="blineEdit">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>60</y>
+          <width>71</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="clineEdit">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>10</y>
+          <width>71</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="dlineEdit">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>60</y>
+          <width>71</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="identiStacked">
+       <widget class="QLineEdit" name="hardLineEdit">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>281</width>
+          <height>41</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="addBtn">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>310</y>
+        <width>93</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Add</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addsaveBtn">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>310</y>
+        <width>93</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="difficultyCBox">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>60</y>
+        <width>231</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>True or False</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Multiple Choices</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Identification</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="addbackBtn">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="leaderboardspg">
+     <widget class="QLabel" name="lbText">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>30</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Leaderboards</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="lbbackBtn">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>320</y>
+        <width>80</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="aboutuspg">
+     <widget class="QLabel" name="auText">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>30</y>
+        <width>41</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>About Us</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="aubackBtn">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>320</y>
+        <width>80</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>360</width>
+     <height>19</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
