@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>360</width>
-    <height>400</height>
+    <height>394</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -35,60 +35,82 @@
       <height>640</height>
      </size>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background:#28104e</string>
+    </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="Startpg">
      <widget class="QPushButton" name="playBtn">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>170</y>
-        <width>171</width>
-        <height>31</height>
+        <x>70</x>
+        <y>180</y>
+        <width>211</width>
+        <height>41</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins Black</family>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:#6237A0;
+color:white
+</string>
+      </property>
       <property name="text">
-       <string>Play</string>
+       <string>                                                 PLAY</string>
       </property>
      </widget>
      <widget class="QPushButton" name="lbBtn">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>220</y>
-        <width>171</width>
+        <x>70</x>
+        <y>230</y>
+        <width>131</width>
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins Black</family>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:#9754CB;
+color: white</string>
+      </property>
       <property name="text">
-       <string>Leaderboards</string>
+       <string>   LEADERBOARDS</string>
       </property>
      </widget>
      <widget class="QPushButton" name="aboutusBtn">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>270</y>
-        <width>171</width>
+        <x>210</x>
+        <y>230</y>
+        <width>71</width>
         <height>31</height>
        </rect>
       </property>
-      <property name="text">
-       <string>About Us</string>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <bold>true</bold>
+       </font>
       </property>
-     </widget>
-     <widget class="QLabel" name="titleLbl">
-      <property name="geometry">
-       <rect>
-        <x>150</x>
-        <y>80</y>
-        <width>41</width>
-        <height>14</height>
-       </rect>
+      <property name="styleSheet">
+       <string notr="true">background:#9754CB;
+color: white</string>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>ABOUT US</string>
       </property>
      </widget>
     </widget>
@@ -96,11 +118,18 @@
      <widget class="QLabel" name="diffLbl">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>120</y>
+        <x>70</x>
+        <y>90</y>
         <width>91</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>Difficulty:</string>
@@ -109,11 +138,18 @@
      <widget class="QLabel" name="qnLbl">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>190</y>
+        <x>70</x>
+        <y>140</y>
         <width>151</width>
-        <height>31</height>
+        <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>Number of Questions</string>
@@ -122,8 +158,8 @@
      <widget class="QComboBox" name="diffCBox">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>120</y>
+        <x>90</x>
+        <y>110</y>
         <width>171</width>
         <height>26</height>
        </rect>
@@ -132,11 +168,21 @@
      <widget class="QPushButton" name="nextBtn">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>300</y>
+        <x>250</x>
+        <y>220</y>
         <width>93</width>
         <height>29</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #6237A0;
+color: white</string>
       </property>
       <property name="text">
        <string>next</string>
@@ -145,11 +191,18 @@
      <widget class="QLabel" name="catLbl">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>60</y>
-        <width>81</width>
-        <height>20</height>
+        <x>70</x>
+        <y>40</y>
+        <width>161</width>
+        <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>Category:</string>
@@ -158,9 +211,9 @@
      <widget class="QComboBox" name="quesnumCBox">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>190</y>
-        <width>151</width>
+        <x>90</x>
+        <y>160</y>
+        <width>171</width>
         <height>26</height>
        </rect>
       </property>
@@ -171,11 +224,37 @@
      <widget class="QComboBox" name="catCBox">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>90</x>
         <y>60</y>
         <width>171</width>
         <height>26</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="nextBtn_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>220</y>
+        <width>93</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #6237A0;
+color: white</string>
+      </property>
+      <property name="text">
+       <string>back</string>
       </property>
      </widget>
     </widget>
@@ -183,11 +262,18 @@
      <widget class="QPushButton" name="readyBtn">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>270</y>
+        <x>250</x>
+        <y>260</y>
         <width>80</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>Ready</string>
@@ -206,6 +292,26 @@
        <string>instruc</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="ibackBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>80</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>back</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="quizpg">
      <widget class="QStackedWidget" name="diffStacked">
@@ -218,7 +324,7 @@
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background:rgb(170, 170, 255)</string>
+       <string notr="true">background:#6237A0</string>
       </property>
       <property name="currentIndex">
        <number>1</number>
@@ -294,20 +400,34 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>60</y>
+          <y>40</y>
           <width>271</width>
-          <height>31</height>
+          <height>101</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:#9754cb</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButton">
         <property name="geometry">
          <rect>
           <x>110</x>
-          <y>120</y>
+          <y>160</y>
           <width>91</width>
           <height>21</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:#9754cb;
+color: white</string>
         </property>
         <property name="text">
          <string>Submit</string>
@@ -353,16 +473,24 @@
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>60</y>
+        <y>80</y>
         <width>281</width>
         <height>41</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">color:rgb(0, 0, 0)</string>
+       <string notr="true">background:#9754cb;
+color: white</string>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>Question:</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -377,6 +505,16 @@
         <height>21</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #9754cb;
+color: white</string>
+      </property>
       <property name="text">
        <string>Pause</string>
       </property>
@@ -384,11 +522,18 @@
      <widget class="QLabel" name="scoreLbl">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>10</y>
+        <x>250</x>
+        <y>20</y>
         <width>63</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>Score:</string>
@@ -397,11 +542,18 @@
      <widget class="QLabel" name="scoreNum">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>10</y>
-        <width>41</width>
+        <x>300</x>
+        <y>20</y>
+        <width>51</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>scoreLbl</string>
@@ -410,27 +562,41 @@
      <widget class="QLabel" name="timeLbl">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>40</y>
+        <x>110</x>
+        <y>50</y>
         <width>41</width>
         <height>14</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
-       <string>time</string>
+       <string>time:</string>
       </property>
      </widget>
      <widget class="QLabel" name="categoryLbl">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>20</y>
-        <width>41</width>
-        <height>14</height>
+        <x>110</x>
+        <y>30</y>
+        <width>71</width>
+        <height>20</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
-       <string>category</string>
+       <string>category:</string>
       </property>
      </widget>
      <widget class="QLabel" name="quesNumLbl">
@@ -438,9 +604,15 @@
        <rect>
         <x>20</x>
         <y>130</y>
-        <width>41</width>
-        <height>14</height>
+        <width>61</width>
+        <height>16</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>quesnum</string>
@@ -451,11 +623,22 @@
      <widget class="QPushButton" name="resueBtn">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>110</y>
+        <x>100</x>
+        <y>120</y>
         <width>161</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #6237A0;
+color:white</string>
       </property>
       <property name="text">
        <string>Resume</string>
@@ -464,11 +647,22 @@
      <widget class="QPushButton" name="retryBtn_3">
       <property name="geometry">
        <rect>
-        <x>90</x>
+        <x>100</x>
         <y>160</y>
         <width>161</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #9754cb;
+color:white</string>
       </property>
       <property name="text">
        <string>Retry</string>
@@ -477,11 +671,22 @@
      <widget class="QPushButton" name="menuBtn">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>210</y>
+        <x>100</x>
+        <y>200</y>
         <width>161</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #deacf5;
+color:white</string>
       </property>
       <property name="text">
        <string>Main Menu</string>
@@ -492,11 +697,15 @@
      <widget class="QLineEdit" name="name_inp">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>220</y>
+        <x>90</x>
+        <y>240</y>
         <width>113</width>
         <height>26</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #6237A0;
+color: white</string>
       </property>
      </widget>
      <widget class="QLabel" name="nameLbl">
@@ -504,9 +713,16 @@
        <rect>
         <x>40</x>
         <y>220</y>
-        <width>63</width>
+        <width>51</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>Name: </string>
@@ -515,11 +731,15 @@
      <widget class="QLabel" name="caLbl">
       <property name="geometry">
        <rect>
-        <x>180</x>
+        <x>92</x>
         <y>140</y>
-        <width>63</width>
+        <width>91</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #6237A0;
+color: white</string>
       </property>
       <property name="text">
        <string>...</string>
@@ -531,8 +751,15 @@
         <x>40</x>
         <y>170</y>
         <width>71</width>
-        <height>31</height>
+        <height>16</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>Score:</string>
@@ -541,24 +768,42 @@
      <widget class="QLabel" name="remarksLbl">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>40</y>
+        <x>120</x>
+        <y>60</y>
         <width>111</width>
-        <height>51</height>
+        <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #6237A0;
+color: white</string>
+      </property>
       <property name="text">
-       <string>Remarks</string>
+       <string>        Remarks</string>
       </property>
      </widget>
      <widget class="QLabel" name="caText">
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>130</y>
+        <y>110</y>
         <width>121</width>
-        <height>31</height>
+        <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>Correct Answer/s:</string>
@@ -567,11 +812,15 @@
      <widget class="QLabel" name="scre">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>170</y>
-        <width>63</width>
+        <x>92</x>
+        <y>190</y>
+        <width>91</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #6237A0;
+color: white</string>
       </property>
       <property name="text">
        <string>...</string>
@@ -694,6 +943,13 @@
           <height>20</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="text">
          <string>name:</string>
         </property>
@@ -706,6 +962,13 @@
           <width>81</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
         </property>
         <property name="text">
          <string>password:</string>
@@ -720,6 +983,12 @@
           <height>20</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="text">
          <string>confirm password:</string>
         </property>
@@ -732,6 +1001,17 @@
           <width>93</width>
           <height>29</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: #6237A0;
+color: white</string>
         </property>
         <property name="text">
          <string>Sign Up</string>
@@ -746,6 +1026,10 @@
           <height>26</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background: #6237A0;
+color: white</string>
+        </property>
        </widget>
        <widget class="QLineEdit" name="pass_inp_auth_s">
         <property name="geometry">
@@ -755,6 +1039,10 @@
           <width>141</width>
           <height>26</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: #6237A0;
+color: white</string>
         </property>
         <property name="echoMode">
          <enum>QLineEdit::Password</enum>
@@ -769,6 +1057,10 @@
           <height>26</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background: #6237A0;
+color: white</string>
+        </property>
         <property name="echoMode">
          <enum>QLineEdit::Password</enum>
         </property>
@@ -781,6 +1073,13 @@
           <width>111</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
         </property>
         <property name="text">
          <string>Insert into user</string>
@@ -804,11 +1103,21 @@
      <widget class="QPushButton" name="sign_sec">
       <property name="geometry">
        <rect>
-        <x>180</x>
+        <x>190</x>
         <y>40</y>
-        <width>151</width>
+        <width>141</width>
         <height>29</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #9754cb;
+color: white</string>
       </property>
       <property name="text">
        <string>Sign-up</string>
@@ -819,12 +1128,19 @@
        <rect>
         <x>30</x>
         <y>40</y>
-        <width>151</width>
+        <width>141</width>
         <height>29</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background: #6237A0;
+color: white</string>
       </property>
       <property name="text">
        <string>Login</string>
@@ -838,6 +1154,16 @@
         <width>80</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #6237A0;
+color: white</string>
       </property>
       <property name="text">
        <string>Back</string>
@@ -1023,6 +1349,10 @@
           <height>131</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background: #DEACf5;
+color: white</string>
+        </property>
        </widget>
        <widget class="QPushButton" name="editBtn">
         <property name="geometry">
@@ -1032,6 +1362,16 @@
           <width>80</width>
           <height>21</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: #6237A0;
+color: white</string>
         </property>
         <property name="text">
          <string>Edit</string>
@@ -1045,6 +1385,16 @@
           <width>80</width>
           <height>21</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: #9754cb;
+color: white</string>
         </property>
         <property name="text">
          <string>Delete</string>
@@ -1061,6 +1411,17 @@
         <height>21</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #6237A0;
+color: white</string>
+      </property>
       <property name="text">
        <string>Back</string>
       </property>
@@ -1068,11 +1429,21 @@
      <widget class="QPushButton" name="editIndex">
       <property name="geometry">
        <rect>
-        <x>180</x>
+        <x>190</x>
         <y>50</y>
-        <width>151</width>
+        <width>141</width>
         <height>29</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #6237A0;
+color: white</string>
       </property>
       <property name="text">
        <string>Edit/Delete</string>
@@ -1083,12 +1454,20 @@
        <rect>
         <x>30</x>
         <y>50</y>
-        <width>151</width>
+        <width>141</width>
         <height>29</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background: #6237A0;
+color: white</string>
       </property>
       <property name="text">
        <string>Add</string>
@@ -1105,6 +1484,13 @@
         <height>20</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>category</string>
       </property>
@@ -1118,6 +1504,13 @@
         <height>20</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>name</string>
       </property>
@@ -1128,8 +1521,12 @@
         <x>20</x>
         <y>110</y>
         <width>321</width>
-        <height>91</height>
+        <height>81</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #DEacf5;
+color: white</string>
       </property>
      </widget>
      <widget class="QLabel" name="qnoLbl">
@@ -1140,6 +1537,13 @@
         <width>91</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>question no.</string>
@@ -1153,6 +1557,13 @@
         <width>63</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>Question</string>
@@ -1168,7 +1579,8 @@
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(170, 170, 255);</string>
+       <string notr="true">background: #DEacf5;
+color: white</string>
       </property>
       <property name="currentIndex">
        <number>0</number>
@@ -1183,8 +1595,16 @@
           <height>29</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">background: #6237A0;
+color: white</string>
         </property>
         <property name="text">
          <string>True</string>
@@ -1199,8 +1619,16 @@
           <height>29</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">background: #6237A0;
+color: white</string>
         </property>
         <property name="text">
          <string>False</string>
@@ -1323,6 +1751,13 @@
         <height>29</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>Add</string>
       </property>
@@ -1336,6 +1771,13 @@
         <height>29</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>Save</string>
       </property>
@@ -1348,6 +1790,13 @@
         <width>231</width>
         <height>26</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <item>
        <property name="text">
@@ -1374,6 +1823,13 @@
         <height>21</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>Back</string>
       </property>
@@ -1383,11 +1839,18 @@
      <widget class="QLabel" name="lbText">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>130</x>
         <y>30</y>
-        <width>71</width>
+        <width>101</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>Leaderboards</string>
@@ -1406,19 +1869,54 @@
        <string>Back</string>
       </property>
      </widget>
+     <widget class="QLabel" name="lbText_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>60</y>
+        <width>281</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #DEacf5;
+color: white</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="aboutuspg">
      <widget class="QLabel" name="auText">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>140</x>
         <y>30</y>
-        <width>41</width>
-        <height>14</height>
+        <width>81</width>
+        <height>20</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:#6237A0;
+color: white</string>
+      </property>
       <property name="text">
-       <string>About Us</string>
+       <string>    About Us</string>
       </property>
      </widget>
      <widget class="QPushButton" name="aubackBtn">
@@ -1429,6 +1927,13 @@
         <width>80</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>Back</string>
@@ -1443,7 +1948,7 @@
      <x>0</x>
      <y>0</y>
      <width>360</width>
-     <height>19</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
