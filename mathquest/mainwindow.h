@@ -102,6 +102,20 @@ private slots:
 
     void on_addSaveBtn_clicked();
 
+    void on_aBtn_clicked();
+
+    void on_bBtn_clicked();
+
+    void on_cBtn_clicked();
+
+    void on_dbtn_clicked();
+
+    void on_trueBtn_clicked();
+
+    void on_falseBtn_clicked();
+
+    void on_leadsubmitBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;

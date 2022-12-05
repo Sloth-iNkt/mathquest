@@ -873,14 +873,6 @@ void MainWindow::on_quesnumCBox_activated(int index)
 }
 
 
-void MainWindow::on_submitBtn_clicked()
-{
-    if(quesnum == question_no_easy || quesnum == question_no_med || quesnum == question_no_hard){
-        ui->MainStack->setCurrentIndex(5);
-    }
-}
-
-
 void MainWindow::on_menuBtn_clicked()
 {
     ui->MainStack->setCurrentIndex(0);
@@ -925,5 +917,67 @@ void MainWindow::on_addSaveBtn_clicked()
         return;
     }
     ui->error_add->setText("congrats");
-    ui->MainStack->setCurrentIndex(0);
 }
+
+
+void MainWindow::on_submitBtn_clicked()
+{
+    if(quesnum == question_no_hard){
+        ui->MainStack->setCurrentIndex(5);
+    }
+}
+
+void MainWindow::on_aBtn_clicked()
+{
+    if(quesnum == question_no_med){
+        ui->MainStack->setCurrentIndex(5);
+    }
+}
+
+
+void MainWindow::on_bBtn_clicked()
+{
+    if(quesnum == question_no_med){
+        ui->MainStack->setCurrentIndex(5);
+    }
+}
+
+
+void MainWindow::on_cBtn_clicked()
+{
+    if(quesnum == question_no_med){
+        ui->MainStack->setCurrentIndex(5);
+    }
+}
+
+
+void MainWindow::on_dbtn_clicked()
+{
+    if(quesnum == question_no_med){
+        ui->MainStack->setCurrentIndex(5);
+    }
+}
+
+
+void MainWindow::on_trueBtn_clicked()
+{
+    if(quesnum == question_no_easy){
+        ui->MainStack->setCurrentIndex(5);
+    }
+}
+
+
+void MainWindow::on_falseBtn_clicked()
+{
+    if(quesnum == question_no_easy){
+        ui->MainStack->setCurrentIndex(5);
+    }
+}
+
+
+void MainWindow::on_leadsubmitBtn_clicked()
+{
+
+    ui->MainStack->setCurrentIndex(9);
+}
+
