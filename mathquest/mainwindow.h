@@ -70,6 +70,8 @@ private slots:
 
     void Showdiff (int cat_id);
 
+    void ShowCat();
+
     void on_readyBtn_clicked();
 
     void on_lbbackBtn_clicked();
@@ -115,6 +117,12 @@ private slots:
     void on_falseBtn_clicked();
 
     void on_leadsubmitBtn_clicked();
+
+    void on_catCBox_activated(int index);
+
+    void item_num(int range_, int num);
+
+    void setQ(QString q);
 
 private:
     Ui::MainWindow *ui;

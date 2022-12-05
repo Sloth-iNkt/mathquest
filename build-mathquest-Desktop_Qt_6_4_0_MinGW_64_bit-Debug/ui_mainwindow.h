@@ -22,7 +22,6 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
-#include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -36,7 +35,6 @@ public:
     QPushButton *playBtn;
     QPushButton *lbBtn;
     QPushButton *aboutusBtn;
-    QPushButton *reviewBtn;
     QPushButton *customBtn;
     QWidget *categorypg;
     QLabel *diffLbl;
@@ -53,6 +51,9 @@ public:
     QPushButton *ibackBtn;
     QWidget *quizpg;
     QStackedWidget *diffStacked;
+    QWidget *tofpg;
+    QPushButton *trueBtn;
+    QPushButton *falseBtn;
     QWidget *multipg;
     QPushButton *aBtn;
     QPushButton *bBtn;
@@ -60,10 +61,7 @@ public:
     QPushButton *dbtn;
     QWidget *identipg;
     QLineEdit *identiLine;
-    QPushButton *pushButton;
-    QWidget *tofpg;
-    QPushButton *trueBtn;
-    QPushButton *falseBtn;
+    QPushButton *submitBtn;
     QLabel *qstnLbl;
     QPushButton *pauseBtn;
     QLabel *scoreLbl;
@@ -71,6 +69,7 @@ public:
     QLabel *timeLbl;
     QLabel *categoryLbl;
     QLabel *quesNumLbl;
+    QLabel *timeText;
     QWidget *pausepg;
     QPushButton *resueBtn;
     QPushButton *retryBtn;
@@ -83,6 +82,7 @@ public:
     QLabel *remarksLbl;
     QLabel *caText;
     QLabel *scre;
+    QPushButton *leadsubmitBtn;
     QWidget *loginpg;
     QStackedWidget *ls_box;
     QWidget *login_top;
@@ -118,12 +118,6 @@ public:
     QLineEdit *namelineEdit;
     QLineEdit *noteTextbox;
     QLabel *addnoteLbl;
-    QWidget *layoutWidget_9;
-    QHBoxLayout *reviewerLayout;
-    QLabel *reviewerLbl;
-    QLineEdit *reviewereditLine;
-    QHBoxLayout *horizontalLayout_12;
-    QToolButton *reviewerBtn;
     QLabel *onadderror;
     QPushButton *addBtn_cat;
     QWidget *editStack;
@@ -156,7 +150,7 @@ public:
     QLineEdit *hardLineEdit;
     QPushButton *addBtn;
     QComboBox *difficultyCBox;
-    QPushButton *addbackBtn;
+    QPushButton *addSaveBtn;
     QLabel *error_add;
     QWidget *leaderboardspg;
     QLabel *lbText;
@@ -172,14 +166,24 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(360, 399);
+        MainWindow->resize(360, 640);
         MainWindow->setMaximumSize(QSize(360, 640));
+        MainWindow->setStyleSheet(QString::fromUtf8("background:#28104e"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         MainStack = new QStackedWidget(centralwidget);
         MainStack->setObjectName("MainStack");
-        MainStack->setGeometry(QRect(0, 0, 360, 351));
-        MainStack->setMaximumSize(QSize(360, 640));
+        MainStack->setGeometry(QRect(1, 1, 360, 640));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(MainStack->sizePolicy().hasHeightForWidth());
+        MainStack->setSizePolicy(sizePolicy);
+        MainStack->setMinimumSize(QSize(360, 640));
+        MainStack->setMaximumSize(QSize(699, 640));
+        MainStack->setSizeIncrement(QSize(1, 1));
+        MainStack->setBaseSize(QSize(360, 640));
+        MainStack->setCursor(QCursor(Qt::ArrowCursor));
         MainStack->setStyleSheet(QString::fromUtf8("background:#28104e"));
         Startpg = new QWidget();
         Startpg->setObjectName("Startpg");
@@ -212,12 +216,9 @@ public:
         aboutusBtn->setFont(font2);
         aboutusBtn->setStyleSheet(QString::fromUtf8("background:#9754CB;\n"
 "color: white"));
-        reviewBtn = new QPushButton(Startpg);
-        reviewBtn->setObjectName("reviewBtn");
-        reviewBtn->setGeometry(QRect(70, 270, 93, 29));
         customBtn = new QPushButton(Startpg);
         customBtn->setObjectName("customBtn");
-        customBtn->setGeometry(QRect(180, 270, 93, 29));
+        customBtn->setGeometry(QRect(70, 270, 211, 29));
         MainStack->addWidget(Startpg);
         categorypg = new QWidget();
         categorypg->setObjectName("categorypg");
@@ -269,7 +270,8 @@ public:
         readyBtn->setFont(font3);
         instrucLbl = new QLabel(readypg);
         instrucLbl->setObjectName("instrucLbl");
-        instrucLbl->setGeometry(QRect(150, 100, 41, 14));
+        instrucLbl->setGeometry(QRect(70, 70, 231, 161));
+        instrucLbl->setMaximumSize(QSize(700, 16777215));
         ibackBtn = new QPushButton(readypg);
         ibackBtn->setObjectName("ibackBtn");
         ibackBtn->setGeometry(QRect(10, 10, 80, 31));
@@ -279,8 +281,19 @@ public:
         quizpg->setObjectName("quizpg");
         diffStacked = new QStackedWidget(quizpg);
         diffStacked->setObjectName("diffStacked");
-        diffStacked->setGeometry(QRect(20, 150, 311, 191));
+        diffStacked->setGeometry(QRect(20, 190, 311, 191));
         diffStacked->setStyleSheet(QString::fromUtf8("background:#6237A0"));
+        tofpg = new QWidget();
+        tofpg->setObjectName("tofpg");
+        trueBtn = new QPushButton(tofpg);
+        trueBtn->setObjectName("trueBtn");
+        trueBtn->setGeometry(QRect(50, 50, 201, 31));
+        trueBtn->setStyleSheet(QString::fromUtf8("background:rgb(85, 0, 255)"));
+        falseBtn = new QPushButton(tofpg);
+        falseBtn->setObjectName("falseBtn");
+        falseBtn->setGeometry(QRect(50, 100, 201, 31));
+        falseBtn->setStyleSheet(QString::fromUtf8("background:rgb(85, 0, 255);"));
+        diffStacked->addWidget(tofpg);
         multipg = new QWidget();
         multipg->setObjectName("multipg");
         aBtn = new QPushButton(multipg);
@@ -306,34 +319,23 @@ public:
         identiLine->setObjectName("identiLine");
         identiLine->setGeometry(QRect(20, 40, 271, 101));
         identiLine->setStyleSheet(QString::fromUtf8("background:#9754cb"));
-        pushButton = new QPushButton(identipg);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(110, 160, 91, 21));
-        pushButton->setFont(font3);
-        pushButton->setStyleSheet(QString::fromUtf8("background:#9754cb;\n"
+        submitBtn = new QPushButton(identipg);
+        submitBtn->setObjectName("submitBtn");
+        submitBtn->setGeometry(QRect(110, 160, 91, 21));
+        submitBtn->setFont(font3);
+        submitBtn->setStyleSheet(QString::fromUtf8("background:#9754cb;\n"
 "color: white"));
         diffStacked->addWidget(identipg);
-        tofpg = new QWidget();
-        tofpg->setObjectName("tofpg");
-        trueBtn = new QPushButton(tofpg);
-        trueBtn->setObjectName("trueBtn");
-        trueBtn->setGeometry(QRect(50, 50, 201, 31));
-        trueBtn->setStyleSheet(QString::fromUtf8("background:rgb(85, 0, 255)"));
-        falseBtn = new QPushButton(tofpg);
-        falseBtn->setObjectName("falseBtn");
-        falseBtn->setGeometry(QRect(50, 100, 201, 31));
-        falseBtn->setStyleSheet(QString::fromUtf8("background:rgb(85, 0, 255);"));
-        diffStacked->addWidget(tofpg);
         qstnLbl = new QLabel(quizpg);
         qstnLbl->setObjectName("qstnLbl");
-        qstnLbl->setGeometry(QRect(40, 80, 281, 41));
+        qstnLbl->setGeometry(QRect(40, 80, 281, 71));
         qstnLbl->setFont(font3);
         qstnLbl->setStyleSheet(QString::fromUtf8("background:#9754cb;\n"
 "color: white"));
         qstnLbl->setAlignment(Qt::AlignCenter);
         pauseBtn = new QPushButton(quizpg);
         pauseBtn->setObjectName("pauseBtn");
-        pauseBtn->setGeometry(QRect(10, 10, 61, 21));
+        pauseBtn->setGeometry(QRect(10, 30, 61, 21));
         pauseBtn->setFont(font2);
         pauseBtn->setStyleSheet(QString::fromUtf8("background: #9754cb;\n"
 "color: white"));
@@ -355,8 +357,12 @@ public:
         categoryLbl->setFont(font3);
         quesNumLbl = new QLabel(quizpg);
         quesNumLbl->setObjectName("quesNumLbl");
-        quesNumLbl->setGeometry(QRect(20, 130, 61, 16));
+        quesNumLbl->setGeometry(QRect(20, 160, 61, 16));
         quesNumLbl->setFont(font2);
+        timeText = new QLabel(quizpg);
+        timeText->setObjectName("timeText");
+        timeText->setGeometry(QRect(160, 50, 41, 14));
+        timeText->setFont(font3);
         MainStack->addWidget(quizpg);
         pausepg = new QWidget();
         pausepg->setObjectName("pausepg");
@@ -413,6 +419,12 @@ public:
         scre->setObjectName("scre");
         scre->setGeometry(QRect(92, 190, 91, 20));
         scre->setStyleSheet(QString::fromUtf8("background: #6237A0;\n"
+"color: white"));
+        leadsubmitBtn = new QPushButton(resultspg);
+        leadsubmitBtn->setObjectName("leadsubmitBtn");
+        leadsubmitBtn->setGeometry(QRect(130, 310, 91, 21));
+        leadsubmitBtn->setFont(font3);
+        leadsubmitBtn->setStyleSheet(QString::fromUtf8("background:#9754cb;\n"
 "color: white"));
         MainStack->addWidget(resultspg);
         loginpg = new QWidget();
@@ -516,7 +528,7 @@ public:
         addStack->setObjectName("addStack");
         layoutWidget_7 = new QWidget(addStack);
         layoutWidget_7->setObjectName("layoutWidget_7");
-        layoutWidget_7->setGeometry(QRect(10, 50, 231, 28));
+        layoutWidget_7->setGeometry(QRect(10, 60, 231, 30));
         categoryLayout = new QHBoxLayout(layoutWidget_7);
         categoryLayout->setObjectName("categoryLayout");
         categoryLayout->setContentsMargins(0, 0, 0, 0);
@@ -534,7 +546,7 @@ public:
 
         layoutWidget_8 = new QWidget(addStack);
         layoutWidget_8->setObjectName("layoutWidget_8");
-        layoutWidget_8->setGeometry(QRect(10, 10, 171, 28));
+        layoutWidget_8->setGeometry(QRect(10, 20, 171, 30));
         nameLayout = new QHBoxLayout(layoutWidget_8);
         nameLayout->setObjectName("nameLayout");
         nameLayout->setContentsMargins(0, 0, 0, 0);
@@ -558,33 +570,6 @@ public:
         addnoteLbl = new QLabel(addStack);
         addnoteLbl->setObjectName("addnoteLbl");
         addnoteLbl->setGeometry(QRect(10, 120, 58, 26));
-        layoutWidget_9 = new QWidget(addStack);
-        layoutWidget_9->setObjectName("layoutWidget_9");
-        layoutWidget_9->setGeometry(QRect(10, 80, 250, 28));
-        reviewerLayout = new QHBoxLayout(layoutWidget_9);
-        reviewerLayout->setObjectName("reviewerLayout");
-        reviewerLayout->setContentsMargins(0, 0, 0, 0);
-        reviewerLbl = new QLabel(layoutWidget_9);
-        reviewerLbl->setObjectName("reviewerLbl");
-
-        reviewerLayout->addWidget(reviewerLbl);
-
-        reviewereditLine = new QLineEdit(layoutWidget_9);
-        reviewereditLine->setObjectName("reviewereditLine");
-        reviewereditLine->setReadOnly(true);
-
-        reviewerLayout->addWidget(reviewereditLine);
-
-        horizontalLayout_12 = new QHBoxLayout();
-        horizontalLayout_12->setObjectName("horizontalLayout_12");
-
-        reviewerLayout->addLayout(horizontalLayout_12);
-
-        reviewerBtn = new QToolButton(layoutWidget_9);
-        reviewerBtn->setObjectName("reviewerBtn");
-
-        reviewerLayout->addWidget(reviewerBtn);
-
         onadderror = new QLabel(addStack);
         onadderror->setObjectName("onadderror");
         onadderror->setGeometry(QRect(10, 170, 101, 20));
@@ -737,10 +722,10 @@ public:
         difficultyCBox->setObjectName("difficultyCBox");
         difficultyCBox->setGeometry(QRect(60, 60, 231, 26));
         difficultyCBox->setFont(font3);
-        addbackBtn = new QPushButton(addpg);
-        addbackBtn->setObjectName("addbackBtn");
-        addbackBtn->setGeometry(QRect(0, 0, 81, 21));
-        addbackBtn->setFont(font3);
+        addSaveBtn = new QPushButton(addpg);
+        addSaveBtn->setObjectName("addSaveBtn");
+        addSaveBtn->setGeometry(QRect(0, 0, 81, 21));
+        addSaveBtn->setFont(font3);
         error_add = new QLabel(addpg);
         error_add->setObjectName("error_add");
         error_add->setGeometry(QRect(30, 310, 101, 20));
@@ -777,7 +762,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 360, 26));
+        menubar->setGeometry(QRect(0, 0, 360, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -785,11 +770,11 @@ public:
 
         retranslateUi(MainWindow);
 
-        MainStack->setCurrentIndex(8);
+        MainStack->setCurrentIndex(3);
         diffStacked->setCurrentIndex(0);
         ls_box->setCurrentIndex(1);
-        addeditStack->setCurrentIndex(1);
-        optionCBox->setCurrentIndex(1);
+        addeditStack->setCurrentIndex(0);
+        optionCBox->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -801,7 +786,6 @@ public:
         playBtn->setText(QCoreApplication::translate("MainWindow", "                                                 PLAY", nullptr));
         lbBtn->setText(QCoreApplication::translate("MainWindow", "   LEADERBOARDS", nullptr));
         aboutusBtn->setText(QCoreApplication::translate("MainWindow", "ABOUT US", nullptr));
-        reviewBtn->setText(QCoreApplication::translate("MainWindow", "Review", nullptr));
         customBtn->setText(QCoreApplication::translate("MainWindow", "Custom", nullptr));
         diffLbl->setText(QCoreApplication::translate("MainWindow", "Difficulty:", nullptr));
         qnLbl->setText(QCoreApplication::translate("MainWindow", "Number of Questions", nullptr));
@@ -811,13 +795,13 @@ public:
         readyBtn->setText(QCoreApplication::translate("MainWindow", "Ready", nullptr));
         instrucLbl->setText(QCoreApplication::translate("MainWindow", "instruc", nullptr));
         ibackBtn->setText(QCoreApplication::translate("MainWindow", "back", nullptr));
+        trueBtn->setText(QCoreApplication::translate("MainWindow", "True", nullptr));
+        falseBtn->setText(QCoreApplication::translate("MainWindow", "False", nullptr));
         aBtn->setText(QCoreApplication::translate("MainWindow", "A", nullptr));
         bBtn->setText(QCoreApplication::translate("MainWindow", "B", nullptr));
         cBtn->setText(QCoreApplication::translate("MainWindow", "C", nullptr));
         dbtn->setText(QCoreApplication::translate("MainWindow", "D", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Submit", nullptr));
-        trueBtn->setText(QCoreApplication::translate("MainWindow", "True", nullptr));
-        falseBtn->setText(QCoreApplication::translate("MainWindow", "False", nullptr));
+        submitBtn->setText(QCoreApplication::translate("MainWindow", "Submit", nullptr));
         qstnLbl->setText(QCoreApplication::translate("MainWindow", "Question:", nullptr));
         pauseBtn->setText(QCoreApplication::translate("MainWindow", "Pause", nullptr));
         scoreLbl->setText(QCoreApplication::translate("MainWindow", "Score:", nullptr));
@@ -825,6 +809,7 @@ public:
         timeLbl->setText(QCoreApplication::translate("MainWindow", "time:", nullptr));
         categoryLbl->setText(QCoreApplication::translate("MainWindow", "category:", nullptr));
         quesNumLbl->setText(QCoreApplication::translate("MainWindow", "quesnum", nullptr));
+        timeText->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
         resueBtn->setText(QCoreApplication::translate("MainWindow", "Resume", nullptr));
         retryBtn->setText(QCoreApplication::translate("MainWindow", "Retry", nullptr));
         menuBtn->setText(QCoreApplication::translate("MainWindow", "Main Menu", nullptr));
@@ -834,6 +819,7 @@ public:
         remarksLbl->setText(QCoreApplication::translate("MainWindow", "        Remarks", nullptr));
         caText->setText(QCoreApplication::translate("MainWindow", "Correct Answer/s:", nullptr));
         scre->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
+        leadsubmitBtn->setText(QCoreApplication::translate("MainWindow", "Submit", nullptr));
         name_lbl->setText(QCoreApplication::translate("MainWindow", "name:", nullptr));
         pass_lbl->setText(QCoreApplication::translate("MainWindow", "password:", nullptr));
         login_btn->setText(QCoreApplication::translate("MainWindow", "Login", nullptr));
@@ -853,8 +839,6 @@ public:
         namelineEdit->setText(QString());
         noteTextbox->setText(QString());
         addnoteLbl->setText(QCoreApplication::translate("MainWindow", "note", nullptr));
-        reviewerLbl->setText(QCoreApplication::translate("MainWindow", "reviewer", nullptr));
-        reviewerBtn->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         onadderror->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         addBtn_cat->setText(QCoreApplication::translate("MainWindow", "Next", nullptr));
         editBtn->setText(QCoreApplication::translate("MainWindow", "Edit", nullptr));
@@ -867,7 +851,7 @@ public:
         ___qtablewidgetitem2->setText(QCoreApplication::translate("MainWindow", "Difficulty", nullptr));
         QTableWidgetItem *___qtablewidgetitem3 = editList->verticalHeaderItem(0);
         ___qtablewidgetitem3->setText(QCoreApplication::translate("MainWindow", "1", nullptr));
-        cstmbackBtn->setText(QCoreApplication::translate("MainWindow", "Man Menu", nullptr));
+        cstmbackBtn->setText(QCoreApplication::translate("MainWindow", "Main Menu", nullptr));
         editIndex->setText(QCoreApplication::translate("MainWindow", "Edit/Delete", nullptr));
         addIndex->setText(QCoreApplication::translate("MainWindow", "Add", nullptr));
         addcatLbl->setText(QCoreApplication::translate("MainWindow", "category", nullptr));
@@ -885,7 +869,7 @@ public:
         difficultyCBox->setItemText(1, QCoreApplication::translate("MainWindow", "Multiple Choices", nullptr));
         difficultyCBox->setItemText(2, QCoreApplication::translate("MainWindow", "Identification", nullptr));
 
-        addbackBtn->setText(QCoreApplication::translate("MainWindow", "Back", nullptr));
+        addSaveBtn->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
         error_add->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         lbText->setText(QCoreApplication::translate("MainWindow", "Leaderboards", nullptr));
         lbbackBtn->setText(QCoreApplication::translate("MainWindow", "Back", nullptr));
