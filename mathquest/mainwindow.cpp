@@ -349,9 +349,9 @@ void MainWindow::item_num(int range_, int num) { // random number para sa random
                     int db_temp_id = qry.value(0).toInt();
                     QString db_temp_ques = qry.value(1).toString();
                     bool db_temp_ans = qry.value(2).toBool();
-                    qDebug() << db_temp_ques;
-                    setQ(db_temp_ques);
-//                    ui->qnLbl->setText(db_temp_ques);
+                    ui->qstnLbl->setText(db_temp_ques);
+                    timer_();
+                    // if button is clicked pause for 5 secs, reveal answer then continue loop ulit
 //                    if (ui->MainStack->currentIndex() == 3) {
 //                        qDebug() << "hehe";
 //                        ui->qnLbl->setText(db_temp_ques);
@@ -369,18 +369,13 @@ void MainWindow::item_num(int range_, int num) { // random number para sa random
 }
 
 
-void MainWindow::setQ(QString q) {
-    ui->qstnLbl->setText(q);
-    ::delay();
-}
-
 void MainWindow::on_readyBtn_clicked()
 {
     ui->MainStack->setCurrentIndex(3);
     ui->categoryLbl->setText(chosen_cat);
     ui->scoreNum->setText(QString::number(score));
     item_num(q_item -1, quesnum);
-    timer_();
+//    timer_();
 }
 
 
@@ -389,7 +384,7 @@ void MainWindow::timer_() {
     pauseBtn_ = false;
     resumeBtn_ = false;
 
-    int num = 30;
+    int num = 5;
     int i = 0;
     while(i < num+1) {
         ui->timeText->setText(QString::number(num-i));

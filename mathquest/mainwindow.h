@@ -122,8 +122,6 @@ private slots:
 
     void item_num(int range_, int num);
 
-    void setQ(QString q);
-
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
