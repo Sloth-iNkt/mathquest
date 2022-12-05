@@ -39,7 +39,7 @@
      <string notr="true">background:#28104e</string>
     </property>
     <property name="currentIndex">
-     <number>8</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Startpg">
      <widget class="QPushButton" name="playBtn">
@@ -353,7 +353,7 @@ color: white</string>
        <string notr="true">background:#6237A0</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="multipg">
        <widget class="QPushButton" name="aBtn">
@@ -435,7 +435,7 @@ color: white</string>
          <string notr="true">background:#9754cb</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="submitBtn">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -646,7 +646,7 @@ color: white</string>
      </widget>
     </widget>
     <widget class="QWidget" name="pausepg">
-     <widget class="QPushButton" name="resueBtn">
+     <widget class="QPushButton" name="resumeBtn">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -1479,7 +1479,7 @@ color: white</string>
 color: white</string>
       </property>
       <property name="text">
-       <string>Man Menu</string>
+       <string>Main Menu</string>
       </property>
      </widget>
      <widget class="QPushButton" name="editIndex">
@@ -1997,7 +1997,7 @@ color: white</string>
      <x>0</x>
      <y>0</y>
      <width>360</width>
-     <height>26</height>
+     <height>19</height>
     </rect>
    </property>
   </widget>

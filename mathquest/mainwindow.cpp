@@ -9,10 +9,16 @@
 #include <QRandomGenerator64>
 
 QString active_name, active_category, add_drpdwn_diff;
+bool pauseBtn_, resumeBtn_;
 int active_user_id, active_category_id;
 int q_num_e = 1, q_num_m =1, q_num_h = 1;
 bool inp_ans_e;
+QString db_cat, q_diff;
 QString optn1, optn2, optn3, optn4, inp_ans_m, inp_ans_h;
+int question_no_easy = 1, question_no_med = 1, question_no_hard = 1;
+int cat_id = 1;
+int quesnum;
+int q_cat=1, q_item;
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -251,6 +257,81 @@ void q_num(QString diff, int owner_id, int category_id) {
             } else {
                 q_num_h += 1;
             }
+        }
+    }
+}
+
+//timer
+void MainWindow::timer_() {
+    pauseBtn_ = false;
+    resumeBtn_ = false;
+    int num = 30;
+    int i = 0;
+    while(i < num+1) {
+        ui->timeLbl->setText(QString::number(num-i));
+        delay();
+        if (pauseBtn_ == true && resumeBtn_ == false) {
+            continue;
+        } else {
+            i += 1;
+        }
+    }
+}
+
+//questionNumber
+void MainWindow::maxnum(QString diff_, int cat_id) {
+    QSqlQuery qry;
+    q_item = 1;
+    ui->quesnumCBox->clear();
+    qry.prepare("SELECT ID FROM \'" + diff_ + "\' WHERE category_id = ?");
+    qDebug() << diff_ << cat_id;
+    qry.bindValue(0, cat_id);
+    if (qry.exec()) {
+        qDebug() << "error not";
+
+        while (qry.next()) {
+            int q_id = qry.value(0).toInt();
+//            qDebug() << q_item;
+            ui->quesnumCBox->addItem(QString::number(q_item));
+            q_item += 1;
+        }
+    }
+}
+
+//difficulty
+void MainWindow::Showdiff (int cat_id) {
+    QSqlQuery qry;
+    ui->diffCBox->clear();
+    qry.prepare("SELECT ID FROM questionsEasy WHERE category_id = ?");
+    qry.bindValue(0, cat_id);
+    if (qry.exec()) {
+        if (qry.next()) {
+            int num_e = qry.value(0).toInt();
+            qDebug() << num_e;
+            qDebug() << cat_id << "thethers";
+            ui->diffCBox->addItem("True or False");
+        }
+    }
+
+    qry.prepare("SELECT ID FROM questionMedium WHERE category_id = ?");
+    qry.bindValue(0, cat_id);
+    if (qry.exec()) {
+        if (qry.next()) {
+            int num_e = qry.value(0).toInt();
+            qDebug() << num_e;
+            qDebug() << cat_id << "thex";
+            ui->diffCBox->addItem("Multiple Choices");
+        }
+    }
+
+    qry.prepare("SELECT ID FROM questionHard WHERE category_id = ?");
+    qry.bindValue(0, cat_id);
+    if (qry.exec()) {
+        if (qry.next()) {
+            int num_e = qry.value(0).toInt();
+            qDebug() << num_e;
+            qDebug() << cat_id << "thester";
+            ui->diffCBox->addItem("Identificaction");
         }
     }
 }
@@ -673,4 +754,129 @@ void MainWindow::on_addbackBtn_clicked()
     ui->addeditStack->setCurrentIndex(1);
 }
 
+
+
+void MainWindow::on_lbbackBtn_clicked()
+{
+    ui->MainStack->setCurrentIndex(0);
+}
+
+
+void MainWindow::on_aubackBtn_clicked()
+{
+    ui->MainStack->setCurrentIndex(0);
+}
+
+
+void MainWindow::on_ibackBtn_clicked()
+{
+    ui->MainStack->setCurrentIndex(1);
+}
+
+
+void MainWindow::on_nextBtn_2_clicked()
+{
+    ui->MainStack->setCurrentIndex(0);
+}
+
+
+void MainWindow::on_readyBtn_clicked()
+{
+    ui->MainStack->setCurrentIndex(3);
+}
+
+
+void MainWindow::on_nextBtn_clicked()
+{
+//    if () {
+        ui->MainStack->setCurrentIndex(3);
+//    }
+}
+
+
+void MainWindow::on_diffCBox_activated(int index)
+{
+    qDebug() << index;
+    if (index == 0) {
+        ui->diffStacked->setCurrentIndex(2);
+        ui->quesNumLbl->setText(QString::number(question_no_easy));
+        q_diff = "questionsEasy";
+
+    } else if (index == 1) {
+        ui->diffStacked->setCurrentIndex(0);
+        ui->quesNumLbl->setText(QString::number(question_no_med));
+        q_diff ="questionMedium";
+    } else {
+        ui->diffStacked->setCurrentIndex(1);
+        ui->quesNumLbl->setText(QString::number(question_no_hard));
+        q_diff ="questionHard";
+    }
+    ui->trueBtn->setStyleSheet("");
+    ui->falseBtn->setStyleSheet("");
+    ui->identiLine->setText("");
+    qDebug() << q_diff;
+    maxnum(q_diff, q_cat);
+}
+
+
+
+
+void MainWindow::on_pauseBtn_clicked()
+{
+    pauseBtn_ = true;
+    resumeBtn_ = false;
+    ui->MainStack->setCurrentIndex(4);
+}
+
+
+void MainWindow::on_quesnumCBox_activated(int index)
+{
+    qDebug() << index;
+    if (index == 0) {
+        quesnum = 10;
+    } else if (index == 1) {
+        quesnum = 20;
+    } else {
+        quesnum = 30;
+    }
+}
+
+
+void MainWindow::on_submitBtn_clicked()
+{
+    if(quesnum == question_no_easy || quesnum == question_no_med || quesnum == question_no_hard){
+        ui->MainStack->setCurrentIndex(5);
+    }
+}
+
+
+void MainWindow::on_menuBtn_clicked()
+{
+    ui->MainStack->setCurrentIndex(0);
+}
+
+
+//void MainWindow::on_catCBox_activated(int index)
+//{
+//
+//}
+
+
+void MainWindow::on_aboutusBtn_clicked()
+{
+     ui->MainStack->setCurrentIndex(10);
+}
+
+
+void MainWindow::on_lbBtn_clicked()
+{
+    ui->MainStack->setCurrentIndex(9);
+}
+
+
+
+void MainWindow::on_retryBtn_clicked()
+{
+    timer_();
+}
 

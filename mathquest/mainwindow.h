@@ -66,6 +66,38 @@ private slots:
 
     void on_addbackBtn_clicked();
 
+    void on_lbbackBtn_clicked();
+
+    void on_aubackBtn_clicked();
+
+    void on_ibackBtn_clicked();
+
+    void on_nextBtn_2_clicked();
+
+    void on_readyBtn_clicked();
+
+    void on_nextBtn_clicked();
+
+    void on_diffCBox_activated(int index);
+
+    void on_pauseBtn_clicked();
+
+    void on_quesnumCBox_activated(int index);
+
+    void on_submitBtn_clicked();
+
+    void on_menuBtn_clicked();
+
+    void maxnum(QString diff_, int cat_id);
+
+    void timer_();
+
+    void Showdiff(int cat_id);
+
+    void on_aboutusBtn_clicked();
+
+    void on_lbBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
