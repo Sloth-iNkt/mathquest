@@ -8,10 +8,11 @@
 #include <QMessageBox>
 #include <QRandomGenerator64>
 
-QString active_name, active_category;
+QString active_name, active_category, add_drpdwn_diff;
 int active_user_id, active_category_id;
 int q_num_e = 1, q_num_m =1, q_num_h = 1;
-bool inp_ans_e, inp_ans_m, inp_ans_h;
+bool inp_ans_e;
+QString optn1, optn2, optn3, optn4, inp_ans_m, inp_ans_h;
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -86,6 +87,7 @@ MainWindow::MainWindow(QWidget *parent)
                  "ID integer PRIMARY KEY AUTOINCREMENT NOT NULL,"
                  "name VARCHAR(20) not null unique,"
                  "difficulty VARCHAR(20) not null,"
+                 "q_num integer not null,"
                  "score integer not null);");
     qry7.prepare("CREATE TABLE IF NOT EXISTS reviewers ("
                  "ID integer PRIMARY KEY AUTOINCREMENT NOT NULL,"
@@ -149,6 +151,107 @@ void addCategory(QString category, QString note, int owner_id) {
     qry.addBindValue(owner_id);
     if (!qry.exec()) {
         qDebug() << "Error add category";
+    }
+}
+
+void addQuestionEasy (QString ques, bool ans, int owner_id, int category_id) {
+    QSqlQuery qry;
+    qry.prepare("INSERT INTO questionsEasy ("
+                "question,"
+                "answer,"
+                "owner_id,"
+                "category_id)"
+                "VALUES (?, ?, ?, ?);");
+    qry.addBindValue(ques);
+    qry.addBindValue(ans);
+    qry.addBindValue(owner_id);
+    qry.addBindValue(category_id);
+    if (!qry.exec()) {
+        qDebug() << "error easy";
+    }
+}
+
+void addQuestionMed (QString ques, QString opt1, QString opt2, QString opt3,
+                     QString opt4, QString ans, int owner_id, int category_id) {
+    QSqlQuery qry;
+    qry.prepare("INSERT INTO questionMedium ("
+                "question,"
+                "option1,"
+                "option2,"
+                "option3,"
+                "option4,"
+                "answer,"
+                "owner_id,"
+                "category_id)"
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?);");
+    qry.addBindValue(ques);
+    qry.addBindValue(opt1);
+    qry.addBindValue(opt2);
+    qry.addBindValue(opt3);
+    qry.addBindValue(opt4);
+    qry.addBindValue(ans);
+    qry.addBindValue(owner_id);
+    qry.addBindValue(category_id);
+    if (!qry.exec()) {
+        qDebug() << "error med";
+    }
+}
+
+void addQuestionHard (QString ques, QString ans, int owner_id, int category_id) {
+    QSqlQuery qry;
+    qry.prepare("INSERT INTO questionHard ("
+                "question,"
+                "answer,"
+                "owner_id,"
+                "category_id)"
+                "VALUES (?, ?, ?, ?);");
+    qry.addBindValue(ques);
+    qry.addBindValue(ans);
+    qry.addBindValue(owner_id);
+    qry.addBindValue(category_id);
+    if (!qry.exec()) {
+        qDebug() << "error hard";
+    }
+}
+
+
+void addLeaderboard (QString name, QString diff, int q_num, int score) {
+    QSqlQuery qry;
+    qry.prepare("INSERT INTO leaderboard("
+                "name,"
+                "difficulty,"
+                "q_num,"
+                "score)"
+                "VALUES (?, ?, ?, ?);");
+    qry.addBindValue(name);
+    qry.addBindValue(diff);
+    qry.addBindValue(q_num);
+    qry.addBindValue(score);
+    if (!qry.exec()) {
+        qDebug() << "error leaderboard";
+    }
+}
+
+//void addReviewer
+
+
+void q_num(QString diff, int owner_id, int category_id) {
+    QSqlQuery qry;
+    qry.prepare("SELECT owner_id, category_id FROM \'" + diff +
+                "\' WHERE owner_id = ? AND category_id = ?");
+    qry.bindValue(0, owner_id);
+    qry.bindValue(1, category_id);
+
+    if (qry.exec()) {
+        if (qry.next()) {
+            if (diff == "questionsEasy") {
+                q_num_e += 1;
+            } else if (diff == "questionMedium") {
+                q_num_m += 1;
+            } else {
+                q_num_h += 1;
+            }
+        }
     }
 }
 
@@ -349,6 +452,7 @@ void MainWindow::on_addBtn_cat_clicked()
             ui->difficultyCBox->setCurrentIndex(0);
             ui->addcatLbl->setText(active_category);
             ui->nameLbl_4->setText(active_name);
+            ui->qnoLbl->setText(QString::number(q_num_e));
 
 //            ui->
             break;
@@ -415,6 +519,57 @@ void MainWindow::on_addfalseBtn_clicked()
     ui->addtrueBtn->setStyleSheet("");
 }
 
+void MainWindow::on_addaBtn_clicked()
+{
+    inp_ans_m = ui->alineEdit->text();
+    ui->addaBtn->setStyleSheet("background-color: qlineargradient"
+                               "(spread:pad, x1:0, y1:0, x2:1, y2:1, "
+                               "stop:0 rgba(0, 255, 0, 255), stop:1 "
+                               "rgba(0, 255, 0, 255))");
+    ui->addbBtn->setStyleSheet("");
+    ui->addcBtn->setStyleSheet("");
+    ui->adddBtn->setStyleSheet("");
+}
+
+
+void MainWindow::on_addbBtn_clicked()
+{
+    inp_ans_m = ui->blineEdit->text();
+    ui->addbBtn->setStyleSheet("background-color: qlineargradient"
+                               "(spread:pad, x1:0, y1:0, x2:1, y2:1, "
+                               "stop:0 rgba(0, 255, 0, 255), stop:1 "
+                               "rgba(0, 255, 0, 255))");
+    ui->addaBtn->setStyleSheet("");
+    ui->addcBtn->setStyleSheet("");
+    ui->adddBtn->setStyleSheet("");
+}
+
+
+void MainWindow::on_addcBtn_clicked()
+{
+    inp_ans_m = ui->clineEdit->text();
+    ui->addcBtn->setStyleSheet("background-color: qlineargradient"
+                               "(spread:pad, x1:0, y1:0, x2:1, y2:1, "
+                               "stop:0 rgba(0, 255, 0, 255), stop:1 "
+                               "rgba(0, 255, 0, 255))");
+    ui->addbBtn->setStyleSheet("");
+    ui->addaBtn->setStyleSheet("");
+    ui->adddBtn->setStyleSheet("");
+}
+
+
+void MainWindow::on_adddBtn_clicked()
+{
+    inp_ans_m = ui->dlineEdit->text();
+    ui->adddBtn->setStyleSheet("background-color: qlineargradient"
+                               "(spread:pad, x1:0, y1:0, x2:1, y2:1, "
+                               "stop:0 rgba(0, 255, 0, 255), stop:1 "
+                               "rgba(0, 255, 0, 255))");
+    ui->addbBtn->setStyleSheet("");
+    ui->addcBtn->setStyleSheet("");
+    ui->addaBtn->setStyleSheet("");
+}
+
 
 void MainWindow::on_addBtn_clicked()
 {
@@ -425,7 +580,89 @@ void MainWindow::on_addBtn_clicked()
     }
     int index_ = ui->optionCBox->currentIndex();
     if (index_ == 0) {
-        qDebug() << "lasd";
+        QString true_btn = ui->addtrueBtn->styleSheet();
+        QString false_btn = ui->addfalseBtn->styleSheet();
+
+        if (true_btn == "" && false_btn == "") {
+            ui->error_add->setText("pili ka sis");
+            return;
+        }
+
+        QMessageBox msgBox1;
+         msgBox1.setText("The document has been modified.");
+         msgBox1.setInformativeText("Add?");
+         msgBox1.setStandardButtons(QMessageBox::Save | QMessageBox::Discard);
+         msgBox1.setDefaultButton(QMessageBox::Save);
+         int ret = msgBox1.exec();
+         switch (ret) {
+           case QMessageBox::Save:
+             add_drpdwn_diff = "questionsEasy";
+             ::addQuestionEasy(question, inp_ans_e, active_user_id, active_category_id);
+             ui->questionLineEdit->clear();
+             ui->addtrueBtn->setStyleSheet("");
+             ui->addfalseBtn->setStyleSheet("");
+             ::q_num(add_drpdwn_diff, active_user_id, active_category_id);
+             ui->qnoLbl->setText(QString::number(q_num_e));
+             break;
+           case QMessageBox::Discard:
+             qDebug() << "byerz";
+             break;
+         }
+    } else if (index_ == 1) {
+        add_drpdwn_diff = "questionMedium";
+
+        QString aC_btn = ui->addaBtn->styleSheet();
+        QString bC_btn = ui->addbBtn->styleSheet();
+        QString cC_btn = ui->addcBtn->styleSheet();
+        QString dC_btn = ui->adddBtn->styleSheet();
+
+        if (aC_btn == "" && bC_btn == "" && cC_btn == "" && dC_btn == "") {
+            ui->error_add->setText("Pili ka sis");
+            return;
+        }
+
+        optn1 = ui -> alineEdit ->text();
+        optn2 = ui -> blineEdit ->text();
+        optn3 = ui -> clineEdit ->text();
+        optn4 = ui -> dlineEdit ->text();
+
+        QMessageBox msgBox1;
+         msgBox1.setText("The document has been modified.");
+         msgBox1.setInformativeText("Add?");
+         msgBox1.setStandardButtons(QMessageBox::Save | QMessageBox::Discard);
+         msgBox1.setDefaultButton(QMessageBox::Save);
+         int ret = msgBox1.exec();
+         switch (ret) {
+           case QMessageBox::Save:
+               // Save was clicked
+               ::addQuestionMed(question, optn1, optn2, optn3,
+                                optn4, inp_ans_m, active_user_id, active_category_id);
+               ui->questionLineEdit->clear();
+               ui->alineEdit->clear();
+               ui->blineEdit->clear();
+               ui->clineEdit->clear();
+               ui->dlineEdit->clear();
+               ui->addaBtn->setStyleSheet("");
+               ui->addbBtn->setStyleSheet("");
+               ui->addcBtn->setStyleSheet("");
+               ui->adddBtn->setStyleSheet("");
+               ::q_num(add_drpdwn_diff, active_user_id, active_category_id);
+               ui->qnoLbl->setText(QString::number(q_num_m));
+               break;
+           case QMessageBox::Discard:
+               // Don't Save was clicked
+               qDebug() << "bye";
+               break;
+         }
+    } else {
+        add_drpdwn_diff = "questionHard";
+
+        inp_ans_h = ui->hardLineEdit->text();
+
+        if (inp_ans_h == "") {
+            ui->error_add->setText("empty");
+            return;
+        }
     }
 }
 

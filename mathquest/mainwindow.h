@@ -54,6 +54,14 @@ private slots:
 
     void on_addfalseBtn_clicked();
 
+    void on_addaBtn_clicked();
+
+    void on_addbBtn_clicked();
+
+    void on_addcBtn_clicked();
+
+    void on_adddBtn_clicked();
+
     void on_addBtn_clicked();
 
     void on_addbackBtn_clicked();

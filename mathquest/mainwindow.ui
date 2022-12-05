@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>360</width>
-    <height>407</height>
+    <height>399</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -1639,7 +1639,7 @@ color: white</string>
 color: white</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tofStacked">
        <widget class="QPushButton" name="addtrueBtn">

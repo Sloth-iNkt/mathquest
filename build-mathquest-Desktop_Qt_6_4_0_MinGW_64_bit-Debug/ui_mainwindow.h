@@ -172,7 +172,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(360, 407);
+        MainWindow->resize(360, 399);
         MainWindow->setMaximumSize(QSize(360, 640));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
@@ -789,7 +789,7 @@ public:
         diffStacked->setCurrentIndex(0);
         ls_box->setCurrentIndex(1);
         addeditStack->setCurrentIndex(1);
-        optionCBox->setCurrentIndex(0);
+        optionCBox->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
