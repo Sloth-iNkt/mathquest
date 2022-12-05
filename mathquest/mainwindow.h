@@ -44,8 +44,6 @@ private slots:
 
     void on_editIndex_clicked();
 
-    void on_reviewerBtn_clicked();
-
     void on_addBtn_cat_clicked();
 
     void on_difficultyCBox_activated(int index);
@@ -65,6 +63,44 @@ private slots:
     void on_addBtn_clicked();
 
     void on_addbackBtn_clicked();
+
+    void timer_();
+
+    void maxnum(QString diff_, int cat_id);
+
+    void Showdiff (int cat_id);
+
+    void on_readyBtn_clicked();
+
+    void on_lbbackBtn_clicked();
+
+    void on_ibackBtn_clicked();
+
+    void on_aubackBtn_clicked();
+
+    void on_aboutusBtn_clicked();
+
+    void on_lbBtn_clicked();
+
+    void on_nextBtn_2_clicked();
+
+    void on_nextBtn_clicked();
+
+    void on_diffCBox_activated(int index);
+
+    void on_pauseBtn_clicked();
+
+    void on_quesnumCBox_activated(int index);
+
+    void on_submitBtn_clicked();
+
+    void on_menuBtn_clicked();
+
+    void on_retryBtn_clicked();
+
+    void on_resueBtn_clicked();
+
+    void on_addSaveBtn_clicked();
 
 private:
     Ui::MainWindow *ui;
