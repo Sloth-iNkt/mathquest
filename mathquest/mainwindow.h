@@ -21,6 +21,43 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_playBtn_clicked();
+
+    void on_customBtn_clicked();
+
+    void on_sign_sec_clicked();
+
+    void on_login_sec_clicked();
+
+    void on_lsbackBtn_clicked();
+
+    void on_login_btn_clicked();
+
+    void on_signup_btn_clicked();
+
+    void check_db_open();
+
+    void on_cstmbackBtn_clicked();
+
+    void on_addIndex_clicked();
+
+    void on_editIndex_clicked();
+
+    void on_reviewerBtn_clicked();
+
+    void on_addBtn_cat_clicked();
+
+    void on_difficultyCBox_activated(int index);
+
+    void on_addtrueBtn_clicked();
+
+    void on_addfalseBtn_clicked();
+
+    void on_addBtn_clicked();
+
+    void on_addbackBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;

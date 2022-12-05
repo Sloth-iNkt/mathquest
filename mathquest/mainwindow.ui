@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>360</width>
-    <height>394</height>
+    <height>407</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -39,7 +39,7 @@
      <string notr="true">background:#28104e</string>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>8</number>
     </property>
     <widget class="QWidget" name="Startpg">
      <widget class="QPushButton" name="playBtn">
@@ -113,6 +113,32 @@ color: white</string>
        <string>ABOUT US</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="reviewBtn">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>270</y>
+        <width>93</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Review</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="customBtn">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>270</y>
+        <width>93</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Custom</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="categorypg">
      <widget class="QLabel" name="diffLbl">
@@ -140,7 +166,7 @@ color: white</string>
        <rect>
         <x>70</x>
         <y>140</y>
-        <width>151</width>
+        <width>161</width>
         <height>21</height>
        </rect>
       </property>
@@ -327,7 +353,7 @@ color: white</string>
        <string notr="true">background:#6237A0</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="multipg">
        <widget class="QPushButton" name="aBtn">
@@ -644,7 +670,7 @@ color:white</string>
        <string>Resume</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="retryBtn_3">
+     <widget class="QPushButton" name="retryBtn">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -906,19 +932,6 @@ color: white</string>
          <enum>QLineEdit::Password</enum>
         </property>
        </widget>
-       <widget class="QLabel" name="label_3">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>220</y>
-          <width>131</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Check lang</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="error_msg_l">
         <property name="geometry">
          <rect>
@@ -1150,7 +1163,7 @@ color: white</string>
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <width>80</width>
         <height>21</height>
        </rect>
@@ -1291,14 +1304,18 @@ color: white</string>
         </property>
         <layout class="QHBoxLayout" name="reviewerLayout">
          <item>
-          <widget class="QLabel" name="label_17">
+          <widget class="QLabel" name="reviewerLbl">
            <property name="text">
             <string>reviewer</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="reviewereditLine"/>
+          <widget class="QLineEdit" name="reviewereditLine">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_12"/>
@@ -1312,7 +1329,7 @@ color: white</string>
          </item>
         </layout>
        </widget>
-       <widget class="QLabel" name="onadderrorLbl">
+       <widget class="QLabel" name="onadderror">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -1325,7 +1342,7 @@ color: white</string>
          <string>TextLabel</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="nextBtn_3">
+       <widget class="QPushButton" name="addBtn_cat">
         <property name="geometry">
          <rect>
           <x>220</x>
@@ -1340,20 +1357,6 @@ color: white</string>
        </widget>
       </widget>
       <widget class="QWidget" name="editStack">
-       <widget class="QListView" name="editlistView">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>50</y>
-          <width>291</width>
-          <height>131</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background: #DEACf5;
-color: white</string>
-        </property>
-       </widget>
        <widget class="QPushButton" name="editBtn">
         <property name="geometry">
          <rect>
@@ -1400,13 +1403,66 @@ color: white</string>
          <string>Delete</string>
         </property>
        </widget>
+       <widget class="QTableWidget" name="editList">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>301</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QAbstractScrollArea::AdjustToContents</enum>
+        </property>
+        <property name="dragEnabled">
+         <bool>false</bool>
+        </property>
+        <property name="dragDropOverwriteMode">
+         <bool>false</bool>
+        </property>
+        <property name="sortingEnabled">
+         <bool>false</bool>
+        </property>
+        <row>
+         <property name="text">
+          <string>1</string>
+         </property>
+        </row>
+        <column>
+         <property name="text">
+          <string>Category</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>No. of Question/s</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Difficulty</string>
+         </property>
+        </column>
+       </widget>
       </widget>
      </widget>
      <widget class="QPushButton" name="cstmbackBtn">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <width>81</width>
         <height>21</height>
        </rect>
@@ -1423,7 +1479,7 @@ color: white</string>
 color: white</string>
       </property>
       <property name="text">
-       <string>Back</string>
+       <string>Man Menu</string>
       </property>
      </widget>
      <widget class="QPushButton" name="editIndex">
@@ -1554,7 +1610,7 @@ color: white</string>
        <rect>
         <x>20</x>
         <y>90</y>
-        <width>63</width>
+        <width>81</width>
         <height>20</height>
        </rect>
       </property>
@@ -1745,7 +1801,7 @@ color: white</string>
      <widget class="QPushButton" name="addBtn">
       <property name="geometry">
        <rect>
-        <x>50</x>
+        <x>130</x>
         <y>310</y>
         <width>93</width>
         <height>29</height>
@@ -1760,26 +1816,6 @@ color: white</string>
       </property>
       <property name="text">
        <string>Add</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="addsaveBtn">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>310</y>
-        <width>93</width>
-        <height>29</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Poppins</family>
-        <pointsize>10</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Save</string>
       </property>
      </widget>
      <widget class="QComboBox" name="difficultyCBox">
@@ -1832,6 +1868,19 @@ color: white</string>
       </property>
       <property name="text">
        <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="error_add">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>310</y>
+        <width>101</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
       </property>
      </widget>
     </widget>
@@ -1948,7 +1997,7 @@ color: white</string>
      <x>0</x>
      <y>0</y>
      <width>360</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
