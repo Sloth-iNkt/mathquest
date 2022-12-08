@@ -69,7 +69,7 @@
      <string notr="true">background:#28104e</string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>10</number>
     </property>
     <widget class="QWidget" name="Startpg">
      <widget class="QPushButton" name="playBtn">
@@ -152,6 +152,15 @@ color: white</string>
         <height>29</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
       <property name="text">
        <string>Custom</string>
       </property>
@@ -174,6 +183,9 @@ color: white</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255,255,255,0.8)</string>
+      </property>
       <property name="text">
        <string>Difficulty:</string>
       </property>
@@ -194,6 +206,9 @@ color: white</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255,255,255,0.8)</string>
+      </property>
       <property name="text">
        <string>Number of Questions</string>
       </property>
@@ -206,6 +221,9 @@ color: white</string>
         <width>171</width>
         <height>26</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255,255,255,0.7)</string>
       </property>
      </widget>
      <widget class="QPushButton" name="nextBtn">
@@ -247,6 +265,9 @@ color: white</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255,255,255,0.8)</string>
+      </property>
       <property name="text">
        <string>Category:</string>
       </property>
@@ -259,6 +280,9 @@ color: white</string>
         <width>171</width>
         <height>26</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255,255,255,0.7)</string>
       </property>
       <property name="editable">
        <bool>false</bool>
@@ -274,7 +298,7 @@ color: white</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgba</string>
+       <string notr="true">color: rgba(255,255,255,0.7)</string>
       </property>
      </widget>
      <widget class="QPushButton" name="nextBtn_2">
@@ -318,6 +342,9 @@ color: white</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255,255,255,0.8)</string>
+      </property>
       <property name="text">
        <string>Ready</string>
       </property>
@@ -337,8 +364,19 @@ color: white</string>
         <height>16777215</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgba(255, 255, 255,0.9);</string>
+      </property>
       <property name="text">
        <string>instruc</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="ibackBtn">
@@ -356,6 +394,9 @@ color: white</string>
         <pointsize>10</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255,255,255,0.7)</string>
       </property>
       <property name="text">
        <string>back</string>
@@ -376,7 +417,7 @@ color: white</string>
        <string notr="true">background:#6237A0</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tofpg">
        <widget class="QPushButton" name="trueBtn">
@@ -388,8 +429,14 @@ color: white</string>
           <height>31</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>Poppins Medium</family>
+         </font>
+        </property>
         <property name="styleSheet">
-         <string notr="true">background:rgb(85, 0, 255)</string>
+         <string notr="true">background:rgb(85, 0, 255);
+color:white;</string>
         </property>
         <property name="text">
          <string>True</string>
@@ -404,8 +451,14 @@ color: white</string>
           <height>31</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>Poppins Medium</family>
+         </font>
+        </property>
         <property name="styleSheet">
-         <string notr="true">background:rgb(85, 0, 255);</string>
+         <string notr="true">background:rgb(85, 0, 255);
+color:white;</string>
         </property>
         <property name="text">
          <string>False</string>
@@ -421,6 +474,12 @@ color: white</string>
           <width>221</width>
           <height>31</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins Medium</family>
+          <bold>false</bold>
+         </font>
         </property>
         <property name="styleSheet">
          <string notr="true">background:rgb(170, 85, 255);</string>
@@ -438,6 +497,11 @@ color: white</string>
           <height>31</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>Poppins Medium</family>
+         </font>
+        </property>
         <property name="styleSheet">
          <string notr="true">background:rgb(170, 85, 255);</string>
         </property>
@@ -454,6 +518,11 @@ color: white</string>
           <height>31</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>Poppins Medium</family>
+         </font>
+        </property>
         <property name="styleSheet">
          <string notr="true">background:rgb(170, 85, 255);</string>
         </property>
@@ -469,6 +538,11 @@ color: white</string>
           <width>221</width>
           <height>31</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins Medium</family>
+         </font>
         </property>
         <property name="styleSheet">
          <string notr="true">background:rgb(170, 85, 255);</string>
@@ -487,6 +561,11 @@ color: white</string>
           <width>271</width>
           <height>101</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins Medium</family>
+         </font>
         </property>
         <property name="styleSheet">
          <string notr="true">background:#9754cb</string>
@@ -584,6 +663,9 @@ color: white</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgba(255,255,255,0.8);</string>
+      </property>
       <property name="text">
        <string>Score:</string>
       </property>
@@ -603,6 +685,9 @@ color: white</string>
         <pointsize>10</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgba(255,255,255,0.8);</string>
       </property>
       <property name="text">
        <string>scoreLbl</string>
@@ -624,6 +709,9 @@ color: white</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgba(255,255,255,0.8);</string>
+      </property>
       <property name="text">
        <string>time:</string>
       </property>
@@ -644,6 +732,10 @@ color: white</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgba(255,255,255,0.8);
+</string>
+      </property>
       <property name="text">
        <string>category:</string>
       </property>
@@ -662,6 +754,9 @@ color: white</string>
         <family>Poppins</family>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgba(255,255,255,0.8);</string>
       </property>
       <property name="text">
        <string>quesnum</string>
@@ -682,6 +777,9 @@ color: white</string>
         <pointsize>10</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgba(255,255,255,0.8);</string>
       </property>
       <property name="text">
        <string>time</string>
@@ -772,6 +870,11 @@ color:white</string>
         <height>26</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins Medium</family>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">background: #6237A0;
 color: white</string>
@@ -805,6 +908,12 @@ color: white</string>
         <width>91</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins ExtraBold</family>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background: #6237A0;
@@ -887,6 +996,12 @@ color: white</string>
         <height>20</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Poppins ExtraBold</family>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">background: #6237A0;
 color: white</string>
@@ -931,7 +1046,7 @@ color: white</string>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="login_top">
        <widget class="QLabel" name="name_lbl">
@@ -942,6 +1057,15 @@ color: white</string>
           <width>63</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins ExtraBold</family>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:rgba(255,255,255,0.8);</string>
         </property>
         <property name="text">
          <string>name:</string>
@@ -956,6 +1080,15 @@ color: white</string>
           <height>20</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>Poppins ExtraBold</family>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:rgba(255,255,255,0.8);</string>
+        </property>
         <property name="text">
          <string>password:</string>
         </property>
@@ -969,8 +1102,14 @@ color: white</string>
           <height>29</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>Poppins ExtraBold</family>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">color:rgba(255,255,255,0.8);</string>
         </property>
         <property name="text">
          <string>Login</string>
@@ -985,6 +1124,14 @@ color: white</string>
           <height>26</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>Poppins Medium</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: white</string>
+        </property>
        </widget>
        <widget class="QLineEdit" name="pass_inp_auth">
         <property name="geometry">
@@ -994,6 +1141,14 @@ color: white</string>
           <width>161</width>
           <height>26</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins Medium</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: white</string>
         </property>
         <property name="echoMode">
          <enum>QLineEdit::Password</enum>
@@ -1030,6 +1185,9 @@ color: white</string>
           <bold>true</bold>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color:rgba(255,255,255,0.8);</string>
+        </property>
         <property name="text">
          <string>name:</string>
         </property>
@@ -1050,6 +1208,9 @@ color: white</string>
           <bold>true</bold>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color:rgba(255,255,255,0.8);</string>
+        </property>
         <property name="text">
          <string>password:</string>
         </property>
@@ -1068,6 +1229,9 @@ color: white</string>
           <family>Poppins</family>
           <bold>true</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:rgba(255,255,255,0.8);</string>
         </property>
         <property name="text">
          <string>confirm password:</string>
@@ -1261,7 +1425,7 @@ color: white</string>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="addStack">
        <widget class="QWidget" name="layoutWidget_7">
@@ -1276,6 +1440,15 @@ color: white</string>
         <layout class="QHBoxLayout" name="categoryLayout">
          <item>
           <widget class="QLabel" name="addcategoryLbl">
+           <property name="font">
+            <font>
+             <family>Poppins ExtraBold</family>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:rgba(255,255,255,0.8);</string>
+           </property>
            <property name="text">
             <string>category</string>
            </property>
@@ -1308,6 +1481,15 @@ color: white</string>
         <layout class="QHBoxLayout" name="nameLayout">
          <item>
           <widget class="QLabel" name="nameLbl_3">
+           <property name="font">
+            <font>
+             <family>Poppins ExtraBold</family>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:rgba(255,255,255,0.8);</string>
+           </property>
            <property name="text">
             <string>name</string>
            </property>
@@ -1356,6 +1538,15 @@ color: white</string>
           <height>26</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>Poppins ExtraBold</family>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:rgba(255,255,255,0.8);</string>
+        </property>
         <property name="text">
          <string>note</string>
         </property>
@@ -1368,6 +1559,15 @@ color: white</string>
           <width>101</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins Medium</family>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:rgba(255,255,255,0.8);</string>
         </property>
         <property name="text">
          <string>TextLabel</string>
@@ -1578,6 +1778,9 @@ color: white</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255,255,255,0.8);</string>
+      </property>
       <property name="text">
        <string>category</string>
       </property>
@@ -1597,6 +1800,9 @@ color: white</string>
         <pointsize>10</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255,255,255,0.8);</string>
       </property>
       <property name="text">
        <string>name</string>
@@ -1631,6 +1837,9 @@ color: white</string>
         <pointsize>10</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255,255,255,0.8);</string>
       </property>
       <property name="text">
        <string>question no.</string>
@@ -1670,7 +1879,7 @@ color: white</string>
 color: white</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tofStacked">
        <widget class="QPushButton" name="addtrueBtn">
@@ -1845,6 +2054,9 @@ color: white</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255,255,255,0.8);</string>
+      </property>
       <property name="text">
        <string>Add</string>
       </property>
@@ -1864,6 +2076,9 @@ color: white</string>
         <pointsize>10</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255,255,255,0.9);</string>
       </property>
       <item>
        <property name="text">
@@ -1897,6 +2112,9 @@ color: white</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255,255,255,0.7);</string>
+      </property>
       <property name="text">
        <string>Save</string>
       </property>
@@ -1909,6 +2127,11 @@ color: white</string>
         <width>101</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins Medium</family>
+       </font>
       </property>
       <property name="text">
        <string>TextLabel</string>
@@ -1944,6 +2167,15 @@ color: white</string>
         <width>80</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins ExtraBold</family>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255,255,255,0.7);</string>
       </property>
       <property name="text">
        <string>Back</string>
@@ -2019,6 +2251,40 @@ color: white</string>
        <string>Back</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>100</y>
+        <width>221</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Impact</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size:13px;color: white;</string>
+      </property>
+      <property name="text">
+       <string>Mathquest serves as an educational platform specifically aimed for visual learners. We use a formative assessment type of game to help learners review and study as per their needs. </string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -2028,7 +2294,7 @@ color: white</string>
      <x>0</x>
      <y>0</y>
      <width>360</width>
-     <height>25</height>
+     <height>19</height>
     </rect>
    </property>
   </widget>

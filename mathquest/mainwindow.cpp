@@ -31,9 +31,9 @@ bool pauseBtn_, resumeBtn_;
 
 int chosen_cat_id = 1, chosen_user_id;
 QString chosen_cat, chosen_diff, chosen_note, chosen_user;
-QString insE = "instructions sa easy";
-QString insM = "instructions sa medium";
-QString insH = "instructions sa hard";
+QString insE = "Choose TRUE if the statement is correct, otherwise choose FALSE";
+QString insM = "Read the following questions carefully and choose the letter that best describes the answer";
+QString insH = "Identify what is being asked in the displayed question. Enter your answers on the textbox below.";
 int quesnum = 10, score = 0;
 
 
@@ -470,7 +470,7 @@ void MainWindow::Showdiff(int cat_id) {
     qry.bindValue(0, cat_id);
     if (qry.exec()) {
         if (qry.next()) {
-            ui->diffCBox->addItem("Identificaction");
+            ui->diffCBox->addItem("Identification");
         }
     }
 }
