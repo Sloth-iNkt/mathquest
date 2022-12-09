@@ -83,6 +83,7 @@ public:
     QLabel *caText;
     QLabel *scre;
     QPushButton *leadsubmitBtn;
+    QLabel *error;
     QWidget *loginpg;
     QStackedWidget *ls_box;
     QWidget *login_top;
@@ -156,9 +157,17 @@ public:
     QLabel *lbText;
     QPushButton *lbbackBtn;
     QLabel *lbText_2;
+    QTableWidget *tableLead;
+    QComboBox *comboBox;
+    QLabel *catlbl;
+    QLabel *diflbl;
+    QComboBox *comboBox_2;
+    QLabel *qnumlbl;
+    QComboBox *comboBox_3;
     QWidget *aboutuspg;
     QLabel *auText;
     QPushButton *aubackBtn;
+    QLabel *label;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -173,7 +182,7 @@ public:
         centralwidget->setObjectName("centralwidget");
         MainStack = new QStackedWidget(centralwidget);
         MainStack->setObjectName("MainStack");
-        MainStack->setGeometry(QRect(1, 1, 360, 640));
+        MainStack->setGeometry(QRect(-10, 10, 360, 640));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -219,6 +228,8 @@ public:
         customBtn = new QPushButton(Startpg);
         customBtn->setObjectName("customBtn");
         customBtn->setGeometry(QRect(70, 270, 211, 29));
+        customBtn->setFont(font2);
+        customBtn->setStyleSheet(QString::fromUtf8("color: white;"));
         MainStack->addWidget(Startpg);
         categorypg = new QWidget();
         categorypg->setObjectName("categorypg");
@@ -230,13 +241,16 @@ public:
         font3.setPointSize(10);
         font3.setBold(true);
         diffLbl->setFont(font3);
+        diffLbl->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.8)"));
         qnLbl = new QLabel(categorypg);
         qnLbl->setObjectName("qnLbl");
         qnLbl->setGeometry(QRect(70, 140, 161, 21));
         qnLbl->setFont(font3);
+        qnLbl->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.8)"));
         diffCBox = new QComboBox(categorypg);
         diffCBox->setObjectName("diffCBox");
         diffCBox->setGeometry(QRect(90, 110, 171, 26));
+        diffCBox->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.7)"));
         nextBtn = new QPushButton(categorypg);
         nextBtn->setObjectName("nextBtn");
         nextBtn->setGeometry(QRect(250, 220, 93, 29));
@@ -247,14 +261,16 @@ public:
         catLbl->setObjectName("catLbl");
         catLbl->setGeometry(QRect(70, 40, 161, 21));
         catLbl->setFont(font3);
+        catLbl->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.8)"));
         quesnumCBox = new QComboBox(categorypg);
         quesnumCBox->setObjectName("quesnumCBox");
         quesnumCBox->setGeometry(QRect(90, 160, 171, 26));
+        quesnumCBox->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.7)"));
         quesnumCBox->setEditable(false);
         catCBox = new QComboBox(categorypg);
         catCBox->setObjectName("catCBox");
         catCBox->setGeometry(QRect(90, 60, 171, 26));
-        catCBox->setStyleSheet(QString::fromUtf8("color: rgba"));
+        catCBox->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.7)"));
         nextBtn_2 = new QPushButton(categorypg);
         nextBtn_2->setObjectName("nextBtn_2");
         nextBtn_2->setGeometry(QRect(20, 220, 93, 29));
@@ -268,14 +284,21 @@ public:
         readyBtn->setObjectName("readyBtn");
         readyBtn->setGeometry(QRect(250, 260, 80, 31));
         readyBtn->setFont(font3);
+        readyBtn->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.8)"));
         instrucLbl = new QLabel(readypg);
         instrucLbl->setObjectName("instrucLbl");
         instrucLbl->setGeometry(QRect(70, 70, 231, 161));
         instrucLbl->setMaximumSize(QSize(700, 16777215));
+        QFont font4;
+        font4.setFamilies({QString::fromUtf8("Open Sans")});
+        instrucLbl->setFont(font4);
+        instrucLbl->setStyleSheet(QString::fromUtf8("color:rgba(255, 255, 255,0.9);"));
+        instrucLbl->setWordWrap(true);
         ibackBtn = new QPushButton(readypg);
         ibackBtn->setObjectName("ibackBtn");
         ibackBtn->setGeometry(QRect(10, 10, 80, 31));
         ibackBtn->setFont(font3);
+        ibackBtn->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.7)"));
         MainStack->addWidget(readypg);
         quizpg = new QWidget();
         quizpg->setObjectName("quizpg");
@@ -288,36 +311,50 @@ public:
         trueBtn = new QPushButton(tofpg);
         trueBtn->setObjectName("trueBtn");
         trueBtn->setGeometry(QRect(50, 50, 201, 31));
-        trueBtn->setStyleSheet(QString::fromUtf8("background:rgb(85, 0, 255)"));
+        QFont font5;
+        font5.setFamilies({QString::fromUtf8("Poppins Medium")});
+        trueBtn->setFont(font5);
+        trueBtn->setStyleSheet(QString::fromUtf8("background:rgb(85, 0, 255);\n"
+"color:white;"));
         falseBtn = new QPushButton(tofpg);
         falseBtn->setObjectName("falseBtn");
         falseBtn->setGeometry(QRect(50, 100, 201, 31));
-        falseBtn->setStyleSheet(QString::fromUtf8("background:rgb(85, 0, 255);"));
+        falseBtn->setFont(font5);
+        falseBtn->setStyleSheet(QString::fromUtf8("background:rgb(85, 0, 255);\n"
+"color:white;"));
         diffStacked->addWidget(tofpg);
         multipg = new QWidget();
         multipg->setObjectName("multipg");
         aBtn = new QPushButton(multipg);
         aBtn->setObjectName("aBtn");
         aBtn->setGeometry(QRect(50, 20, 221, 31));
-        aBtn->setStyleSheet(QString::fromUtf8("background:rgb(170, 85, 255);"));
+        QFont font6;
+        font6.setFamilies({QString::fromUtf8("Poppins Medium")});
+        font6.setBold(false);
+        aBtn->setFont(font6);
+        aBtn->setStyleSheet(QString::fromUtf8("background:rgb(170, 85, 255);color:black"));
         bBtn = new QPushButton(multipg);
         bBtn->setObjectName("bBtn");
         bBtn->setGeometry(QRect(50, 60, 221, 31));
-        bBtn->setStyleSheet(QString::fromUtf8("background:rgb(170, 85, 255);"));
+        bBtn->setFont(font5);
+        bBtn->setStyleSheet(QString::fromUtf8("background:rgb(170, 85, 255);color:black"));
         cBtn = new QPushButton(multipg);
         cBtn->setObjectName("cBtn");
         cBtn->setGeometry(QRect(50, 100, 221, 31));
-        cBtn->setStyleSheet(QString::fromUtf8("background:rgb(170, 85, 255);"));
+        cBtn->setFont(font5);
+        cBtn->setStyleSheet(QString::fromUtf8("background:rgb(170, 85, 255);color:black"));
         dbtn = new QPushButton(multipg);
         dbtn->setObjectName("dbtn");
         dbtn->setGeometry(QRect(50, 140, 221, 31));
-        dbtn->setStyleSheet(QString::fromUtf8("background:rgb(170, 85, 255);"));
+        dbtn->setFont(font5);
+        dbtn->setStyleSheet(QString::fromUtf8("background:rgb(170, 85, 255);color:black"));
         diffStacked->addWidget(multipg);
         identipg = new QWidget();
         identipg->setObjectName("identipg");
         identiLine = new QLineEdit(identipg);
         identiLine->setObjectName("identiLine");
         identiLine->setGeometry(QRect(20, 40, 271, 101));
+        identiLine->setFont(font5);
         identiLine->setStyleSheet(QString::fromUtf8("background:#9754cb"));
         submitBtn = new QPushButton(identipg);
         submitBtn->setObjectName("submitBtn");
@@ -343,26 +380,33 @@ public:
         scoreLbl->setObjectName("scoreLbl");
         scoreLbl->setGeometry(QRect(250, 20, 63, 20));
         scoreLbl->setFont(font3);
+        scoreLbl->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);"));
         scoreNum = new QLabel(quizpg);
         scoreNum->setObjectName("scoreNum");
         scoreNum->setGeometry(QRect(300, 20, 51, 20));
         scoreNum->setFont(font3);
+        scoreNum->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);"));
         timeLbl = new QLabel(quizpg);
         timeLbl->setObjectName("timeLbl");
         timeLbl->setGeometry(QRect(110, 50, 41, 14));
         timeLbl->setFont(font3);
+        timeLbl->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);"));
         categoryLbl = new QLabel(quizpg);
         categoryLbl->setObjectName("categoryLbl");
         categoryLbl->setGeometry(QRect(110, 30, 71, 20));
         categoryLbl->setFont(font3);
+        categoryLbl->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);\n"
+""));
         quesNumLbl = new QLabel(quizpg);
         quesNumLbl->setObjectName("quesNumLbl");
         quesNumLbl->setGeometry(QRect(20, 160, 61, 16));
         quesNumLbl->setFont(font2);
+        quesNumLbl->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);"));
         timeText = new QLabel(quizpg);
         timeText->setObjectName("timeText");
         timeText->setGeometry(QRect(160, 50, 41, 14));
         timeText->setFont(font3);
+        timeText->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);"));
         MainStack->addWidget(quizpg);
         pausepg = new QWidget();
         pausepg->setObjectName("pausepg");
@@ -390,6 +434,7 @@ public:
         name_inp = new QLineEdit(resultspg);
         name_inp->setObjectName("name_inp");
         name_inp->setGeometry(QRect(90, 240, 113, 26));
+        name_inp->setFont(font5);
         name_inp->setStyleSheet(QString::fromUtf8("background: #6237A0;\n"
 "color: white"));
         nameLbl = new QLabel(resultspg);
@@ -399,6 +444,10 @@ public:
         caLbl = new QLabel(resultspg);
         caLbl->setObjectName("caLbl");
         caLbl->setGeometry(QRect(92, 140, 91, 20));
+        QFont font7;
+        font7.setFamilies({QString::fromUtf8("Poppins ExtraBold")});
+        font7.setBold(true);
+        caLbl->setFont(font7);
         caLbl->setStyleSheet(QString::fromUtf8("background: #6237A0;\n"
 "color: white"));
         scrLbl = new QLabel(resultspg);
@@ -418,6 +467,7 @@ public:
         scre = new QLabel(resultspg);
         scre->setObjectName("scre");
         scre->setGeometry(QRect(92, 190, 91, 20));
+        scre->setFont(font7);
         scre->setStyleSheet(QString::fromUtf8("background: #6237A0;\n"
 "color: white"));
         leadsubmitBtn = new QPushButton(resultspg);
@@ -426,6 +476,9 @@ public:
         leadsubmitBtn->setFont(font3);
         leadsubmitBtn->setStyleSheet(QString::fromUtf8("background:#9754cb;\n"
 "color: white"));
+        error = new QLabel(resultspg);
+        error->setObjectName("error");
+        error->setGeometry(QRect(90, 360, 63, 20));
         MainStack->addWidget(resultspg);
         loginpg = new QWidget();
         loginpg->setObjectName("loginpg");
@@ -437,19 +490,28 @@ public:
         name_lbl = new QLabel(login_top);
         name_lbl->setObjectName("name_lbl");
         name_lbl->setGeometry(QRect(20, 40, 63, 20));
+        name_lbl->setFont(font7);
+        name_lbl->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);"));
         pass_lbl = new QLabel(login_top);
         pass_lbl->setObjectName("pass_lbl");
         pass_lbl->setGeometry(QRect(20, 90, 91, 20));
+        pass_lbl->setFont(font7);
+        pass_lbl->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);"));
         login_btn = new QPushButton(login_top);
         login_btn->setObjectName("login_btn");
         login_btn->setGeometry(QRect(110, 180, 93, 29));
-        login_btn->setStyleSheet(QString::fromUtf8(""));
+        login_btn->setFont(font7);
+        login_btn->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);"));
         name_inp_auth = new QLineEdit(login_top);
         name_inp_auth->setObjectName("name_inp_auth");
         name_inp_auth->setGeometry(QRect(120, 40, 161, 26));
+        name_inp_auth->setFont(font5);
+        name_inp_auth->setStyleSheet(QString::fromUtf8("color: white"));
         pass_inp_auth = new QLineEdit(login_top);
         pass_inp_auth->setObjectName("pass_inp_auth");
         pass_inp_auth->setGeometry(QRect(120, 90, 161, 26));
+        pass_inp_auth->setFont(font5);
+        pass_inp_auth->setStyleSheet(QString::fromUtf8("color: white"));
         pass_inp_auth->setEchoMode(QLineEdit::Password);
         error_msg_l = new QLabel(login_top);
         error_msg_l->setObjectName("error_msg_l");
@@ -461,14 +523,17 @@ public:
         name_lbl_s->setObjectName("name_lbl_s");
         name_lbl_s->setGeometry(QRect(20, 40, 63, 20));
         name_lbl_s->setFont(font3);
+        name_lbl_s->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);"));
         pass_lbl_s = new QLabel(sign_up_top);
         pass_lbl_s->setObjectName("pass_lbl_s");
         pass_lbl_s->setGeometry(QRect(20, 80, 81, 20));
         pass_lbl_s->setFont(font3);
+        pass_lbl_s->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);"));
         pass_lbl_s_c = new QLabel(sign_up_top);
         pass_lbl_s_c->setObjectName("pass_lbl_s_c");
         pass_lbl_s_c->setGeometry(QRect(20, 120, 131, 20));
         pass_lbl_s_c->setFont(font2);
+        pass_lbl_s_c->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);"));
         signup_btn = new QPushButton(sign_up_top);
         signup_btn->setObjectName("signup_btn");
         signup_btn->setGeometry(QRect(110, 180, 93, 29));
@@ -534,6 +599,8 @@ public:
         categoryLayout->setContentsMargins(0, 0, 0, 0);
         addcategoryLbl = new QLabel(layoutWidget_7);
         addcategoryLbl->setObjectName("addcategoryLbl");
+        addcategoryLbl->setFont(font7);
+        addcategoryLbl->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);"));
 
         categoryLayout->addWidget(addcategoryLbl);
 
@@ -552,6 +619,8 @@ public:
         nameLayout->setContentsMargins(0, 0, 0, 0);
         nameLbl_3 = new QLabel(layoutWidget_8);
         nameLbl_3->setObjectName("nameLbl_3");
+        nameLbl_3->setFont(font7);
+        nameLbl_3->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);"));
 
         nameLayout->addWidget(nameLbl_3);
 
@@ -570,9 +639,13 @@ public:
         addnoteLbl = new QLabel(addStack);
         addnoteLbl->setObjectName("addnoteLbl");
         addnoteLbl->setGeometry(QRect(10, 120, 58, 26));
+        addnoteLbl->setFont(font7);
+        addnoteLbl->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);"));
         onadderror = new QLabel(addStack);
         onadderror->setObjectName("onadderror");
         onadderror->setGeometry(QRect(10, 170, 101, 20));
+        onadderror->setFont(font6);
+        onadderror->setStyleSheet(QString::fromUtf8("color:rgba(255,255,255,0.8);"));
         addBtn_cat = new QPushButton(addStack);
         addBtn_cat->setObjectName("addBtn_cat");
         addBtn_cat->setGeometry(QRect(220, 180, 93, 29));
@@ -594,10 +667,10 @@ public:
         editList = new QTableWidget(editStack);
         if (editList->columnCount() < 3)
             editList->setColumnCount(3);
-        QFont font4;
-        font4.setPointSize(9);
+        QFont font8;
+        font8.setPointSize(9);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
-        __qtablewidgetitem->setFont(font4);
+        __qtablewidgetitem->setFont(font8);
         editList->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         editList->setHorizontalHeaderItem(1, __qtablewidgetitem1);
@@ -641,10 +714,12 @@ public:
         addcatLbl->setObjectName("addcatLbl");
         addcatLbl->setGeometry(QRect(10, 30, 63, 20));
         addcatLbl->setFont(font3);
+        addcatLbl->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.8);"));
         nameLbl_4 = new QLabel(addpg);
         nameLbl_4->setObjectName("nameLbl_4");
         nameLbl_4->setGeometry(QRect(90, 30, 63, 20));
         nameLbl_4->setFont(font3);
+        nameLbl_4->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.8);"));
         questionLineEdit = new QLineEdit(addpg);
         questionLineEdit->setObjectName("questionLineEdit");
         questionLineEdit->setGeometry(QRect(20, 110, 321, 81));
@@ -654,6 +729,7 @@ public:
         qnoLbl->setObjectName("qnoLbl");
         qnoLbl->setGeometry(QRect(260, 30, 91, 20));
         qnoLbl->setFont(font3);
+        qnoLbl->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.8);"));
         quesText = new QLabel(addpg);
         quesText->setObjectName("quesText");
         quesText->setGeometry(QRect(20, 90, 81, 20));
@@ -715,6 +791,7 @@ public:
         addBtn->setObjectName("addBtn");
         addBtn->setGeometry(QRect(130, 310, 93, 29));
         addBtn->setFont(font3);
+        addBtn->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.8);"));
         difficultyCBox = new QComboBox(addpg);
         difficultyCBox->addItem(QString());
         difficultyCBox->addItem(QString());
@@ -722,13 +799,16 @@ public:
         difficultyCBox->setObjectName("difficultyCBox");
         difficultyCBox->setGeometry(QRect(60, 60, 231, 26));
         difficultyCBox->setFont(font3);
+        difficultyCBox->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.9);"));
         addSaveBtn = new QPushButton(addpg);
         addSaveBtn->setObjectName("addSaveBtn");
         addSaveBtn->setGeometry(QRect(0, 0, 81, 21));
         addSaveBtn->setFont(font3);
+        addSaveBtn->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.7);"));
         error_add = new QLabel(addpg);
         error_add->setObjectName("error_add");
         error_add->setGeometry(QRect(30, 310, 101, 20));
+        error_add->setFont(font5);
         MainStack->addWidget(addpg);
         leaderboardspg = new QWidget();
         leaderboardspg->setObjectName("leaderboardspg");
@@ -738,13 +818,46 @@ public:
         lbText->setFont(font3);
         lbbackBtn = new QPushButton(leaderboardspg);
         lbbackBtn->setObjectName("lbbackBtn");
-        lbbackBtn->setGeometry(QRect(140, 320, 80, 21));
+        lbbackBtn->setGeometry(QRect(140, 480, 80, 21));
+        lbbackBtn->setFont(font7);
+        lbbackBtn->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.7);"));
         lbText_2 = new QLabel(leaderboardspg);
         lbText_2->setObjectName("lbText_2");
-        lbText_2->setGeometry(QRect(40, 60, 281, 241));
+        lbText_2->setGeometry(QRect(40, 200, 281, 261));
         lbText_2->setFont(font3);
         lbText_2->setStyleSheet(QString::fromUtf8("background: #DEacf5;\n"
 "color: white"));
+        tableLead = new QTableWidget(leaderboardspg);
+        if (tableLead->columnCount() < 2)
+            tableLead->setColumnCount(2);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        tableLead->setHorizontalHeaderItem(0, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        tableLead->setHorizontalHeaderItem(1, __qtablewidgetitem5);
+        if (tableLead->rowCount() < 1)
+            tableLead->setRowCount(1);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        tableLead->setVerticalHeaderItem(0, __qtablewidgetitem6);
+        tableLead->setObjectName("tableLead");
+        tableLead->setGeometry(QRect(40, 210, 271, 251));
+        comboBox = new QComboBox(leaderboardspg);
+        comboBox->setObjectName("comboBox");
+        comboBox->setGeometry(QRect(130, 70, 181, 28));
+        catlbl = new QLabel(leaderboardspg);
+        catlbl->setObjectName("catlbl");
+        catlbl->setGeometry(QRect(30, 80, 63, 20));
+        diflbl = new QLabel(leaderboardspg);
+        diflbl->setObjectName("diflbl");
+        diflbl->setGeometry(QRect(30, 110, 63, 20));
+        comboBox_2 = new QComboBox(leaderboardspg);
+        comboBox_2->setObjectName("comboBox_2");
+        comboBox_2->setGeometry(QRect(130, 100, 181, 28));
+        qnumlbl = new QLabel(leaderboardspg);
+        qnumlbl->setObjectName("qnumlbl");
+        qnumlbl->setGeometry(QRect(30, 150, 121, 21));
+        comboBox_3 = new QComboBox(leaderboardspg);
+        comboBox_3->setObjectName("comboBox_3");
+        comboBox_3->setGeometry(QRect(160, 140, 151, 28));
         MainStack->addWidget(leaderboardspg);
         aboutuspg = new QWidget();
         aboutuspg->setObjectName("aboutuspg");
@@ -758,6 +871,17 @@ public:
         aubackBtn->setObjectName("aubackBtn");
         aubackBtn->setGeometry(QRect(140, 320, 80, 21));
         aubackBtn->setFont(font3);
+        label = new QLabel(aboutuspg);
+        label->setObjectName("label");
+        label->setGeometry(QRect(70, 100, 221, 151));
+        QFont font9;
+        font9.setFamilies({QString::fromUtf8("Impact")});
+        label->setFont(font9);
+        label->setStyleSheet(QString::fromUtf8("font-size:13px;color: white;"));
+        label->setTextFormat(Qt::RichText);
+        label->setScaledContents(true);
+        label->setAlignment(Qt::AlignJustify|Qt::AlignVCenter);
+        label->setWordWrap(true);
         MainStack->addWidget(aboutuspg);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -770,10 +894,10 @@ public:
 
         retranslateUi(MainWindow);
 
-        MainStack->setCurrentIndex(3);
-        diffStacked->setCurrentIndex(0);
-        ls_box->setCurrentIndex(1);
-        addeditStack->setCurrentIndex(0);
+        MainStack->setCurrentIndex(1);
+        diffStacked->setCurrentIndex(2);
+        ls_box->setCurrentIndex(0);
+        addeditStack->setCurrentIndex(1);
         optionCBox->setCurrentIndex(2);
 
 
@@ -820,6 +944,7 @@ public:
         caText->setText(QCoreApplication::translate("MainWindow", "Correct Answer/s:", nullptr));
         scre->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         leadsubmitBtn->setText(QCoreApplication::translate("MainWindow", "Submit", nullptr));
+        error->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         name_lbl->setText(QCoreApplication::translate("MainWindow", "name:", nullptr));
         pass_lbl->setText(QCoreApplication::translate("MainWindow", "password:", nullptr));
         login_btn->setText(QCoreApplication::translate("MainWindow", "Login", nullptr));
@@ -874,8 +999,18 @@ public:
         lbText->setText(QCoreApplication::translate("MainWindow", "Leaderboards", nullptr));
         lbbackBtn->setText(QCoreApplication::translate("MainWindow", "Back", nullptr));
         lbText_2->setText(QString());
+        QTableWidgetItem *___qtablewidgetitem4 = tableLead->horizontalHeaderItem(0);
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("MainWindow", "name", nullptr));
+        QTableWidgetItem *___qtablewidgetitem5 = tableLead->horizontalHeaderItem(1);
+        ___qtablewidgetitem5->setText(QCoreApplication::translate("MainWindow", "score", nullptr));
+        QTableWidgetItem *___qtablewidgetitem6 = tableLead->verticalHeaderItem(0);
+        ___qtablewidgetitem6->setText(QCoreApplication::translate("MainWindow", "1", nullptr));
+        catlbl->setText(QCoreApplication::translate("MainWindow", "Category", nullptr));
+        diflbl->setText(QCoreApplication::translate("MainWindow", "Difficulty", nullptr));
+        qnumlbl->setText(QCoreApplication::translate("MainWindow", "Question Number", nullptr));
         auText->setText(QCoreApplication::translate("MainWindow", "    About Us", nullptr));
         aubackBtn->setText(QCoreApplication::translate("MainWindow", "Back", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Mathquest serves as an educational platform specifically aimed for visual learners. We use a formative assessment type of game to help learners review and study as per their needs. ", nullptr));
     } // retranslateUi
 
 };

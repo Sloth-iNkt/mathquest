@@ -26,8 +26,8 @@
    <widget class="QStackedWidget" name="MainStack">
     <property name="geometry">
      <rect>
-      <x>1</x>
-      <y>1</y>
+      <x>-10</x>
+      <y>10</y>
       <width>360</width>
       <height>640</height>
      </rect>
@@ -69,7 +69,7 @@
      <string notr="true">background:#28104e</string>
     </property>
     <property name="currentIndex">
-     <number>10</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Startpg">
      <widget class="QPushButton" name="playBtn">
@@ -482,7 +482,7 @@ color:white;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background:rgb(170, 85, 255);</string>
+         <string notr="true">background:rgb(170, 85, 255);color:black</string>
         </property>
         <property name="text">
          <string>A</string>
@@ -503,7 +503,7 @@ color:white;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background:rgb(170, 85, 255);</string>
+         <string notr="true">background:rgb(170, 85, 255);color:black</string>
         </property>
         <property name="text">
          <string>B</string>
@@ -524,7 +524,7 @@ color:white;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background:rgb(170, 85, 255);</string>
+         <string notr="true">background:rgb(170, 85, 255);color:black</string>
         </property>
         <property name="text">
          <string>C</string>
@@ -545,7 +545,7 @@ color:white;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background:rgb(170, 85, 255);</string>
+         <string notr="true">background:rgb(170, 85, 255);color:black</string>
         </property>
         <property name="text">
          <string>D</string>
@@ -1032,6 +1032,19 @@ color: white</string>
       </property>
       <property name="text">
        <string>Submit</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="error">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>360</y>
+        <width>63</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
       </property>
      </widget>
     </widget>
@@ -1879,7 +1892,7 @@ color: white</string>
 color: white</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tofStacked">
        <widget class="QPushButton" name="addtrueBtn">
@@ -2163,7 +2176,7 @@ color: white</string>
       <property name="geometry">
        <rect>
         <x>140</x>
-        <y>320</y>
+        <y>480</y>
         <width>80</width>
         <height>21</height>
        </rect>
@@ -2185,9 +2198,9 @@ color: white</string>
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>60</y>
+        <y>200</y>
         <width>281</width>
-        <height>241</height>
+        <height>261</height>
        </rect>
       </property>
       <property name="font">
@@ -2203,6 +2216,100 @@ color: white</string>
       </property>
       <property name="text">
        <string/>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableLead">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>210</y>
+        <width>271</width>
+        <height>251</height>
+       </rect>
+      </property>
+      <row>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>score</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QComboBox" name="comboBox">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>70</y>
+        <width>181</width>
+        <height>28</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="catlbl">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>80</y>
+        <width>63</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Category</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="diflbl">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>110</y>
+        <width>63</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Difficulty</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>100</y>
+        <width>181</width>
+        <height>28</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="qnumlbl">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>150</y>
+        <width>121</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Question Number</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_3">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>140</y>
+        <width>151</width>
+        <height>28</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -2294,7 +2401,7 @@ color: white</string>
      <x>0</x>
      <y>0</y>
      <width>360</width>
-     <height>19</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

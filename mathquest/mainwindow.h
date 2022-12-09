@@ -122,6 +122,12 @@ private slots:
 
     void item_num(int range_, int num);
 
+    void on_comboBox_activated(int index);
+
+    void on_comboBox_2_activated(int index);
+
+    void on_comboBox_3_activated(int index);
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
