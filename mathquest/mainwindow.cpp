@@ -1380,7 +1380,7 @@ void MainWindow::on_leadsubmitBtn_clicked()
                 // add row sa table;
             }
         }
-    }r
+    }
 }
 
 void MainWindow::on_comboBox_activated(int index)
