@@ -21,6 +21,7 @@
 //int q_cat=1, q_item;
 
 
+
 QString active_name, active_category, add_drpdwn_diff; //sa customized to
 int active_user_id, active_category_id; //sa customized to
 int q_num_e = 1, q_num_m =1, q_num_h = 1;
@@ -236,8 +237,6 @@ void addQuestionMed (QString ques, QString opt1, QString opt2, QString opt3,
     }
 }
 
-
-
 // mag add sa questionHard table
 void addQuestionHard (QString ques, QString ans, int owner_id, int category_id) {
     QSqlQuery qry;
@@ -255,8 +254,6 @@ void addQuestionHard (QString ques, QString ans, int owner_id, int category_id) 
         qDebug() << "error hard";
     }
 }
-
-
 
 // mag add sa leaderboard
 void addLeaderboard (QString name, QString cat, QString diff, int q_num, int score) {
@@ -312,12 +309,6 @@ void show_note(int cat_id) {
         }
     }
 }
-
-
-void showQE(int cat_id, int owner_id) {
-
-}
-
 
 
 // tatlo parameters natin dito, difficulty owner id, and category id.
