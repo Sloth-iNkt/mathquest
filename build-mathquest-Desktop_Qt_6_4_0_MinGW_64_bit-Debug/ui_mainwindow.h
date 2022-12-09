@@ -158,12 +158,12 @@ public:
     QPushButton *lbbackBtn;
     QLabel *lbText_2;
     QTableWidget *tableLead;
-    QComboBox *comboBox;
+    QComboBox *cat_combo;
     QLabel *catlbl;
     QLabel *diflbl;
-    QComboBox *comboBox_2;
+    QComboBox *diif_combo;
     QLabel *qnumlbl;
-    QComboBox *comboBox_3;
+    QComboBox *q_num_combo;
     QWidget *aboutuspg;
     QLabel *auText;
     QPushButton *aubackBtn;
@@ -840,24 +840,24 @@ public:
         tableLead->setVerticalHeaderItem(0, __qtablewidgetitem6);
         tableLead->setObjectName("tableLead");
         tableLead->setGeometry(QRect(40, 210, 271, 251));
-        comboBox = new QComboBox(leaderboardspg);
-        comboBox->setObjectName("comboBox");
-        comboBox->setGeometry(QRect(130, 70, 181, 28));
+        cat_combo = new QComboBox(leaderboardspg);
+        cat_combo->setObjectName("cat_combo");
+        cat_combo->setGeometry(QRect(130, 70, 181, 28));
         catlbl = new QLabel(leaderboardspg);
         catlbl->setObjectName("catlbl");
         catlbl->setGeometry(QRect(30, 80, 63, 20));
         diflbl = new QLabel(leaderboardspg);
         diflbl->setObjectName("diflbl");
         diflbl->setGeometry(QRect(30, 110, 63, 20));
-        comboBox_2 = new QComboBox(leaderboardspg);
-        comboBox_2->setObjectName("comboBox_2");
-        comboBox_2->setGeometry(QRect(130, 100, 181, 28));
+        diif_combo = new QComboBox(leaderboardspg);
+        diif_combo->setObjectName("diif_combo");
+        diif_combo->setGeometry(QRect(130, 100, 181, 28));
         qnumlbl = new QLabel(leaderboardspg);
         qnumlbl->setObjectName("qnumlbl");
         qnumlbl->setGeometry(QRect(30, 150, 121, 21));
-        comboBox_3 = new QComboBox(leaderboardspg);
-        comboBox_3->setObjectName("comboBox_3");
-        comboBox_3->setGeometry(QRect(160, 140, 151, 28));
+        q_num_combo = new QComboBox(leaderboardspg);
+        q_num_combo->setObjectName("q_num_combo");
+        q_num_combo->setGeometry(QRect(160, 140, 151, 28));
         MainStack->addWidget(leaderboardspg);
         aboutuspg = new QWidget();
         aboutuspg->setObjectName("aboutuspg");
@@ -894,7 +894,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        MainStack->setCurrentIndex(1);
+        MainStack->setCurrentIndex(9);
         diffStacked->setCurrentIndex(2);
         ls_box->setCurrentIndex(0);
         addeditStack->setCurrentIndex(1);

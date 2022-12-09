@@ -346,8 +346,8 @@ void MainWindow::item_num(int range_, int num) { // random number para sa random
         randArr[j] = k;
         k++;
     }
-    int array[2];
-    for (int i = 0; i < 2; i++) {
+    int array[num];
+    for (int i = 0; i < num; i++) {
             int r = i + rand() % (range_ - i);
             array[i] = randArr[r];
             randArr[r] = randArr[i];
@@ -1236,6 +1236,22 @@ void MainWindow::on_aboutusBtn_clicked()
 
 void MainWindow::on_lbBtn_clicked()
 {
+        //dito palabasin yung sa leaderboards huh unwhpiq
+    QSqlQuery qry;
+    qry.prepare("SELECT * from leaderboard WHERE category = ? AND difficulty = ? AND q_num = ?");
+    if(qry.exec()) {
+        while(qry.next()) {
+            int l_id = qry.value(0).toInt();
+            QString l_name = qry.value(1).toString();
+            QString l_cat = qry.value(2).toString();
+            QString l_diff = qry.value(3).toString();
+            int l_q_num = qry.value(4).toInt();
+            int l_score = qry.value(5).toInt();
+
+            //ui->tableLead-> ufpdfb
+            // insert l_name at l_ score
+        }
+    }
     ui->MainStack->setCurrentIndex(9);
 }
 

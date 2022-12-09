@@ -69,7 +69,7 @@
      <string notr="true">background:#28104e</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>9</number>
     </property>
     <widget class="QWidget" name="Startpg">
      <widget class="QPushButton" name="playBtn">
@@ -2243,7 +2243,7 @@ color: white</string>
        </property>
       </column>
      </widget>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="cat_combo">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -2279,7 +2279,7 @@ color: white</string>
        <string>Difficulty</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_2">
+     <widget class="QComboBox" name="diif_combo">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -2302,7 +2302,7 @@ color: white</string>
        <string>Question Number</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_3">
+     <widget class="QComboBox" name="q_num_combo">
       <property name="geometry">
        <rect>
         <x>160</x>
