@@ -69,7 +69,7 @@
      <string notr="true">background:#28104e</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>10</number>
     </property>
     <widget class="QWidget" name="Startpg">
      <widget class="QPushButton" name="playBtn">
@@ -223,7 +223,8 @@ color: white</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgba(255,255,255,0.7)</string>
+       <string notr="true">background: #9754cb;
+color: rgba(255,255,255,0.7)</string>
       </property>
      </widget>
      <widget class="QPushButton" name="nextBtn">
@@ -282,7 +283,8 @@ color: white</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgba(255,255,255,0.7)</string>
+       <string notr="true">background: #9754cb;
+color: rgba(255,255,255,0.7)</string>
       </property>
       <property name="editable">
        <bool>false</bool>
@@ -298,7 +300,8 @@ color: white</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgba(255,255,255,0.7)</string>
+       <string notr="true">background: #9754cb;
+color: rgba(255,255,255,0.7)</string>
       </property>
      </widget>
      <widget class="QPushButton" name="nextBtn_2">
@@ -343,7 +346,8 @@ color: white</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgba(255,255,255,0.8)</string>
+       <string notr="true">background:#9754cb;
+color: rgba(255,255,255,0.8)</string>
       </property>
       <property name="text">
        <string>Ready</string>
@@ -396,7 +400,8 @@ color: white</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgba(255,255,255,0.7)</string>
+       <string notr="true">background: #9754cb;
+;color: rgba(255,255,255,0.7)</string>
       </property>
       <property name="text">
        <string>back</string>
@@ -883,6 +888,10 @@ color: white</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">
+color: rgba(255,255,255,0.8)</string>
+      </property>
       <property name="text">
        <string>Name: </string>
       </property>
@@ -925,6 +934,10 @@ color: white</string>
         <pointsize>10</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+color: rgba(255,255,255,0.8)</string>
       </property>
       <property name="text">
        <string>Score:</string>
@@ -972,6 +985,10 @@ color: white</string>
         <pointsize>10</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+color: rgba(255,255,255,0.8)</string>
       </property>
       <property name="text">
        <string>Correct Answer/s:</string>
@@ -1831,7 +1848,7 @@ color: white</string>
 color: white</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tofStacked">
        <widget class="QPushButton" name="addtrueBtn">
@@ -1989,16 +2006,6 @@ color: white</string>
         </property>
         <property name="styleSheet">
          <string notr="true">color:white</string>
-        </property>
-       </widget>
-       <widget class="QTextEdit" name="textEdit">
-        <property name="geometry">
-         <rect>
-          <x>50</x>
-          <y>50</y>
-          <width>104</width>
-          <height>85</height>
-         </rect>
         </property>
        </widget>
       </widget>
@@ -2364,6 +2371,10 @@ color: white</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background:#9754cb;
+color: white</string>
+      </property>
       <property name="text">
        <string>Back</string>
       </property>
@@ -2412,7 +2423,7 @@ color: white</string>
      <x>0</x>
      <y>0</y>
      <width>360</width>
-     <height>25</height>
+     <height>19</height>
     </rect>
    </property>
   </widget>
