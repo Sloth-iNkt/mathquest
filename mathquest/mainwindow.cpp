@@ -7,6 +7,9 @@
 #include <QCryptographicHash>
 #include <QMessageBox>
 #include <QRandomGenerator64>
+#include <QTableWidget>
+#include <QTableWidgetItem>
+#include <QList>
 
 //QString active_name, active_category, add_drpdwn_diff;
 //bool pauseBtn_, resumeBtn_;
@@ -138,6 +141,41 @@ MainWindow::~MainWindow()
 {
     delete ui;
     db.close();
+}
+
+
+void MainWindow::showtable(int user_id) {
+    QSqlQuery qry;
+    int row;
+    qry.prepare("SELECT MAX(ID) FROM category WHERE owner_id = ?");
+    qry.bindValue(0, user_id);
+    if (qry.exec()) {
+        if (qry.next()) {
+            row = qry.value(0).toInt();
+            qDebug() << row;
+            ui->editList->setRowCount(row);
+        }
+    }
+
+    QSqlQuery qry1;
+    qry1.prepare("SELECT * FROM category WHERE owner_id = ?");
+    qry1.bindValue(0, user_id);
+    if (qry1.exec()) {
+        int i = 0;
+        while (qry1.next() && i < ui->editList->rowCount()) {
+            cat_id = qry1.value(0).toInt();
+            db_cat = qry1.value(1).toString();
+            QTableWidgetItem *item;
+            for (int j = 0; j < ui->editList->columnCount(); j++) {
+                item = new QTableWidgetItem;
+                if (j==0) {
+                    item->setText(db_cat);
+                }
+                ui->editList->setItem(i, j, item);
+            }
+            i++;
+        }
+    }
 }
 
 void MainWindow::check_db_open() {
@@ -333,6 +371,9 @@ void q_num(QString diff, int owner_id, int category_id) {
         }
     }
 }
+
+
+//void
 
 
 void MainWindow::item_num(int range_, int num) { // random number para sa random questions din
@@ -585,6 +626,7 @@ void MainWindow::maxnum(QString diff_, int cat_id) {
     QSqlQuery qry;
     q_item = 1;
     ui->quesnumCBox->clear();
+    ui->q_num_combo->clear();
     qry.prepare("SELECT ID FROM \'" + diff_ + "\' WHERE category_id = ?");
 //    qDebug() << diff_ << cat_id;
     qry.bindValue(0, cat_id);
@@ -597,18 +639,121 @@ void MainWindow::maxnum(QString diff_, int cat_id) {
     }
 
     if (q_item >= 0 && q_item <19) {
+        ui->q_num_combo->addItem(QString::number(10));
         ui->quesnumCBox->addItem(QString::number(10));
     }
     if (q_item >= 20 && q_item <29) {
         ui->quesnumCBox->addItem(QString::number(10));
         ui->quesnumCBox->addItem(QString::number(20));
+        ui->q_num_combo->addItem(QString::number(10));
+        ui->q_num_combo->addItem(QString::number(20));
     }
     if (q_item >= 30 && q_item <39) {
         ui->quesnumCBox->addItem(QString::number(10));
         ui->quesnumCBox->addItem(QString::number(20));
         ui->quesnumCBox->addItem(QString::number(30));
+        ui->q_num_combo->addItem(QString::number(10));
+        ui->q_num_combo->addItem(QString::number(20));
+        ui->q_num_combo->addItem(QString::number(30));
     }
 }
+
+
+void MainWindow::showleaderboard(int cat_id, QString cat, QString diff, int q_num) {
+    ui->lbText->setStyleSheet("color:white;");
+    QSqlQuery qry1;
+    int row;
+    qry1.prepare("SELECT MAX(ID) FROM leaderboard WHERE category = ? AND difficulty = ? AND q_num = ?");
+    qry1.bindValue(0, cat);
+    qry1.bindValue(1, diff);
+    qry1.bindValue(2, q_num);
+    if (qry1.exec()) {
+        if (qry1.next()) {
+            row = qry1.value(0).toInt();
+            qDebug() << row;
+            ui->tableLead->setRowCount(row);
+        }
+    }
+    QList <QString> list_name[row];
+    QList <int> list_score[row];
+
+    QSqlQuery qry;
+    qry.prepare("SELECT * from leaderboard WHERE category = ? AND difficulty = ? AND q_num = ?");
+    qry.bindValue(0, cat);
+    qry.bindValue(1, diff);
+    qry.bindValue(2, q_num);
+    if(qry.exec()) {
+        while(qry.next() ) {
+            int l_id = qry.value(0).toInt();
+            QString l_name = qry.value(1).toString();
+            QString l_cat = qry.value(2).toString();
+            QString l_diff = qry.value(3).toString();
+            int l_q_num = qry.value(4).toInt();
+            int l_score = qry.value(5).toInt();
+
+            list_name->append(l_name);
+            list_score->append(l_score);
+        }
+    }
+    for (int i = 0; i < list_name->size(); i++) {
+        for (int j = 0; j < list_name->size()-i-1; j++) {
+            if (list_score->value(j) > list_score->value(j+1)) {
+
+                list_score->swapItemsAt(j, j+1);
+                list_name->swapItemsAt(j, j+1);
+            }
+        }
+        qDebug() << list_name[i];
+    }
+
+    qDebug() << list_score->at(0) << "lol";
+    qDebug() << list_score->at(1) << "lol";
+    qDebug() << list_score->at(2) << "lol";
+    qDebug() << list_score->at(3) << "lol";
+    qDebug() << list_score->at(4) << "lol";
+
+    QString name_l;
+    int score_l;
+    int i = 0;
+    while(i < ui->tableLead->rowCount()) {
+        name_l = list_name->value(ui->tableLead->rowCount() - i - 1);
+        score_l = list_score->value(ui->tableLead->rowCount() - i - 1);
+        qDebug() << name_l;
+        qDebug() << score_l;
+        QTableWidgetItem *item;
+
+        for (int j = 0; j < ui->tableLead->columnCount(); j++) {
+            item = new QTableWidgetItem;
+            if (j==0) {
+                item->setText(name_l);
+            } else if (j==1) {
+                item->setText(QString::number(score_l));
+            }
+            ui->tableLead->setItem(i, j, item);
+        }
+        i++;
+    }
+}
+
+//QSqlQuery qry1;
+//qry1.prepare("SELECT * FROM category WHERE owner_id = ?");
+//qry1.bindValue(0, user_id);
+//if (qry1.exec()) {
+//    int i = 0;
+//    while (qry1.next() && i < ui->editList->rowCount()) {
+//        cat_id = qry1.value(0).toInt();
+//        db_cat = qry1.value(1).toString();
+//        QTableWidgetItem *item;
+//        for (int j = 0; j < ui->editList->columnCount(); j++) {
+//            item = new QTableWidgetItem;
+//            if (j==0) {
+//                item->setText(db_cat);
+//            }
+//            ui->editList->setItem(i, j, item);
+//        }
+//        i++;
+//    }
+//}
 
 
 //show category
@@ -616,11 +761,13 @@ void MainWindow::ShowCat() {
     QSqlQuery qry;
     QString db_cat;
     ui->catCBox->clear();
+    ui->cat_combo->clear();
 
     qry.prepare("SELECT * FROM category");
     if (qry.exec()) {
         while (qry.next()) {
             db_cat = qry.value(1).toString();
+            ui->cat_combo->addItem(db_cat);
             ui->catCBox->addItem(db_cat);
         }
     }
@@ -632,11 +779,13 @@ void MainWindow::Showdiff(int cat_id) {
     QSqlQuery qry;
 //    qDebug() << cat_id;
     ui->diffCBox->clear();
+    ui->diif_combo->clear();
     qry.prepare("SELECT ID FROM questionsEasy WHERE category_id = ?");
     qry.bindValue(0, cat_id);
     if (qry.exec()) {
         if (qry.next()) {
             ui->diffCBox->addItem("True or False");
+            ui->diif_combo->addItem("True or False");
         }
     }
 
@@ -645,6 +794,7 @@ void MainWindow::Showdiff(int cat_id) {
     if (qry.exec()) {
         if (qry.next()) {
             ui->diffCBox->addItem("Multiple Choices");
+            ui->diif_combo->addItem("Multiple Choices");
         }
     }
 
@@ -653,6 +803,7 @@ void MainWindow::Showdiff(int cat_id) {
     if (qry.exec()) {
         if (qry.next()) {
             ui->diffCBox->addItem("Identification");
+            ui->diif_combo->addItem("Identification");
         }
     }
 }
@@ -662,7 +813,7 @@ void MainWindow::on_catCBox_activated(int index)
     chosen_cat_id = index + 1;
 
 //    maxnum(chosen_diff, chosen_cat_id);
-
+    qDebug() << chosen_cat_id;
     Showdiff(chosen_cat_id);
 //    chosen_diff = ui->diffCBox->currentText();
     QString testType = ui->diffCBox->currentText();
@@ -716,17 +867,23 @@ void MainWindow::on_customBtn_clicked()
     ui->MainStack->setCurrentIndex(6);
     ui->ls_box->setCurrentIndex(0);
 //    ui->addeditStack->setCurrentIndex(0);
-    ui->login_sec->setStyleSheet("font: 900 9pt 'Segoe UI Black';"
+    ui->login_sec->setStyleSheet("font: 900 9pt 'Segoe UI';"
+                                 "background: #9754cb;"
+                                 "color: white;"
                                  "text-decoration: underline;");
-    ui->sign_sec->setStyleSheet("");
+    ui->sign_sec->setStyleSheet("background: #9754cb;"
+                                "color: white;");
 }
 
 
 void MainWindow::on_login_sec_clicked()
 {
-    ui->login_sec->setStyleSheet("font: 900 9pt 'Segoe UI Black';"
+    ui->login_sec->setStyleSheet("font: 900 9pt 'Segoe UI';"
+                                 "background: #9754cb;"
+                                 "color: white;"
                                  "text-decoration: underline;");
-    ui->sign_sec->setStyleSheet("");
+    ui->sign_sec->setStyleSheet("background: #9754cb;"
+                                "color: white;");
     ui->ls_box->setCurrentIndex(0);
 
 //    clear textbox in sign sec
@@ -739,9 +896,12 @@ void MainWindow::on_login_sec_clicked()
 
 void MainWindow::on_sign_sec_clicked()
 {
-    ui->login_sec->setStyleSheet("");
-    ui->sign_sec->setStyleSheet("font: 900 9pt 'Segoe UI Black';"
+    ui->sign_sec->setStyleSheet("font: 900 9pt 'Segoe UI';"
+                                 "background: #9754cb;"
+                                 "color: white;"
                                  "text-decoration: underline;");
+    ui->login_sec->setStyleSheet("background: #9754cb;"
+                                "color: white;");
     ui->ls_box->setCurrentIndex(1);
 
 //    clear textbox in login sec
@@ -831,9 +991,13 @@ void MainWindow::on_login_btn_clicked()
             ui->error_msg_l->clear();
 
             ui->namelineEdit->setText(active_name);
-            ui->addIndex->setStyleSheet("color: red;");
+            ui->addIndex->setStyleSheet("font: 900 9pt 'Segoe UI';"
+                                        "background: #9754cb;"
+                                        "color: white;"
+                                        "text-decoration: underline;");
             ui->addeditStack->setCurrentIndex(0);
             ui->MainStack->setCurrentIndex(7);
+            showtable(active_user_id);
         }
         else {
             ui->error_msg_l->setText("wrong name or pass");
@@ -852,15 +1016,24 @@ void MainWindow::on_cstmbackBtn_clicked()
 void MainWindow::on_addIndex_clicked()
 {
     ui->addeditStack->setCurrentIndex(0);
-    ui->addIndex->setStyleSheet("color: red;");
-    ui->editIndex->setStyleSheet("");
+    ui->addIndex->setStyleSheet("font: 900 9pt 'Segoe UI';"
+                                "background: #9754cb;"
+                                "color: white;"
+                                "text-decoration: underline;");
+    ui->editIndex->setStyleSheet("background: #9754cb;"
+                                 "color: white;");
 }
 
 
 void MainWindow::on_editIndex_clicked(){
     ui->addeditStack->setCurrentIndex(1);
-    ui->addIndex->setStyleSheet("");
-    ui->editIndex->setStyleSheet("color: red;");
+    ui->addIndex->setStyleSheet("background: #9754cb;"
+                                "color: white;");
+    ui->editIndex->setStyleSheet("font: 900 9pt 'Segoe UI';"
+                                 "background: #9754cb;"
+                                 "color: white;"
+                                 "text-decoration: underline;");
+
 }
 
 void MainWindow::on_addBtn_cat_clicked()
@@ -875,7 +1048,7 @@ void MainWindow::on_addBtn_cat_clicked()
     }
 
     QMessageBox msgBox;
-     msgBox.setText("blah blah");
+     msgBox.setText("Category:" + cat_inp);
      msgBox.setInformativeText("Do you want to save your inputs?");
      msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard);
      msgBox.setDefaultButton(QMessageBox::Save);
@@ -1015,7 +1188,8 @@ void MainWindow::on_adddBtn_clicked()
 
 void MainWindow::on_addBtn_clicked()
 {
-    QString question = ui->questionLineEdit->text();
+    qDebug() <<ui->questionLineEdit->toPlainText();
+    QString question = ui->questionLineEdit->toPlainText();
     if (question == "") {
         ui->error_add->setText("empty");
         return;
@@ -1234,24 +1408,30 @@ void MainWindow::on_aboutusBtn_clicked()
 }
 
 
+
+
 void MainWindow::on_lbBtn_clicked()
 {
-        //dito palabasin yung sa leaderboards huh unwhpiq
-    QSqlQuery qry;
-    qry.prepare("SELECT * from leaderboard WHERE category = ? AND difficulty = ? AND q_num = ?");
-    if(qry.exec()) {
-        while(qry.next()) {
-            int l_id = qry.value(0).toInt();
-            QString l_name = qry.value(1).toString();
-            QString l_cat = qry.value(2).toString();
-            QString l_diff = qry.value(3).toString();
-            int l_q_num = qry.value(4).toInt();
-            int l_score = qry.value(5).toInt();
+     //dito palabasin yung sa leaderboards huh unwhpiq
+    QString d;
 
-            //ui->tableLead-> ufpdfb
-            // insert l_name at l_ score
-        }
+    Showdiff(chosen_cat_id);
+    ShowCat();
+    chosen_cat = ui->cat_combo->currentText();
+    chosen_diff = ui->diif_combo->currentText();
+    maxnum(chosen_diff, chosen_cat_id);
+    int max_num = ui->q_num_combo->currentText().toInt();
+    qDebug() << chosen_cat;
+    if (chosen_diff == "True or False") {
+        d = "questionsEasy";
+    } else if (chosen_diff == "Multiple Choices") {
+        d = "questionMedium";
+    } else {
+        d = "questionHard";
     }
+    qDebug() << chosen_diff;
+
+    showleaderboard(chosen_cat_id, chosen_cat, d, max_num);
     ui->MainStack->setCurrentIndex(9);
 }
 
@@ -1281,7 +1461,7 @@ void MainWindow::on_addSaveBtn_clicked()
         ui->qnoLbl->setText(QString::number(q_num_h));
         return;
     }
-    ui->error_add->setText("congrats");
+    ui->MainStack->setCurrentIndex(0);
 }
 
 
@@ -1376,14 +1556,29 @@ void MainWindow::on_leadsubmitBtn_clicked()
                 ui->error->setText(name_inp + "is already taken");
             } else {
                 ::addLeaderboard(name_inp, chosen_cat, chosen_diff, quesnum, score);
-//                ui->MainStack->setCurrentIndex(9);
+
+                Showdiff(chosen_cat_id);
+                ShowCat();
                 qDebug() << name_inp;
                 qDebug() << chosen_cat;
                 qDebug() << chosen_diff;
 //                qDebug() << chosen_user;
                 qDebug() << quesnum;
                 qDebug() << score;
+
+                ui->cat_combo->setCurrentIndex(chosen_cat_id - 1);
+                if (chosen_diff == "questionsEasy") {
+                    ui->diif_combo->setCurrentText("True or False");
+                } else if (chosen_diff == "questionMedium") {
+                    ui->diif_combo->setCurrentText("Multiple Choices");
+                } else if (chosen_diff == "questionHard") {
+                    ui->diif_combo->setCurrentText("Identification");
+                }
+
+                showleaderboard(chosen_cat_id, chosen_cat, chosen_diff, quesnum);
+
                 ui->MainStack->setCurrentIndex(9);
+
                 // add row sa table;
             }
         }
@@ -1437,5 +1632,49 @@ void MainWindow::on_comboBox_3_activated(int index)
     } else {
         quesnum = 30;
     }
+}
+
+
+void MainWindow::on_editBtn_clicked()
+{
+
+}
+
+void MainWindow::on_cat_combo_activated(int index)
+{
+    chosen_cat_id = index + 1;
+
+    Showdiff(chosen_cat_id);
+    QString testType = ui->diffCBox->currentText();
+    if (testType == "True or False") {
+        chosen_diff = "questionsEasy";
+    } else if (testType == "Multiple Choices") {
+        chosen_diff ="questionMedium";
+    } else {
+        chosen_diff ="questionHard";
+    }
+    maxnum(chosen_diff, chosen_cat_id);
+    ui->q_num_combo->setCurrentIndex(0);
+}
+
+
+void MainWindow::on_diif_combo_activated(int index)
+{
+    QString testType = ui->diif_combo->currentText();
+    if (testType == "True or False") {
+        chosen_diff = "questionsEasy";
+    } else if (testType == "Multiple Choices") {
+        chosen_diff ="questionMedium";
+    } else {
+        chosen_diff ="questionHard";
+    }
+    maxnum(chosen_diff, chosen_cat_id);
+    ui->q_num_combo->setCurrentIndex(0);
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->MainStack->setCurrentIndex(0);
 }
 

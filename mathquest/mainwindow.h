@@ -128,6 +128,18 @@ private slots:
 
     void on_comboBox_3_activated(int index);
 
+    void showtable(int user_id);
+
+    void on_editBtn_clicked();
+
+    void on_cat_combo_activated(int index);
+
+    void on_diif_combo_activated(int index);
+
+    void showleaderboard(int cat_id, QString cat, QString diff, int q_num);
+
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
