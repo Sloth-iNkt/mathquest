@@ -11,18 +11,6 @@
 #include <QTableWidgetItem>
 #include <QList>
 
-//QString active_name, active_category, add_drpdwn_diff;
-//bool pauseBtn_, resumeBtn_;
-//int active_user_id, active_category_id;
-//int q_num_e = 1, q_num_m =1, q_num_h = 1;
-//bool inp_ans_e;
-//QString db_cat, q_diff;
-//QString optn1, optn2, optn3, optn4, inp_ans_m, inp_ans_h;
-//int question_no_easy = 1, question_no_med = 1, question_no_hard = 1;
-//int cat_id = 1;
-//int quesnum;
-//int q_cat=1, q_item;
-
 
 
 QString active_name, active_category, add_drpdwn_diff; //sa customized to
@@ -376,22 +364,37 @@ void q_num(QString diff, int owner_id, int category_id) {
 //void
 
 
-void MainWindow::item_num(int range_, int num) { // random number para sa random questions din
-    qDebug() << range_;
-    qDebug() << num;
+void MainWindow::item_num(QString diff_, int range_, int num) { // random number para sa random questions din
+    int max_range, min_range;
+
+    QSqlQuery qryy;
+    qryy.prepare("SELECT MIN(ID), MAX(ID) FROM \'" + diff_ + "\' WHERE category_id = ?");
+    qryy.bindValue(0, chosen_cat_id);
+    if (qryy.exec()) {
+        if (qryy.next()) {
+            min_range = qryy.value(0).toInt();
+            max_range = qryy.value(1).toInt();
+        }
+    }
+
+    qDebug() << min_range << max_range;
 
     QSqlQuery qry;
     int randArr[range_];
-    int k = 1;
+    int k = min_range;
     for (int j = 0; j < range_; j++) {
         randArr[j] = k;
         k++;
     }
+
     int array[num];
     for (int i = 0; i < num; i++) {
             int r = i + rand() % (range_ - i);
             array[i] = randArr[r];
             randArr[r] = randArr[i];
+    }
+    for (int g=0; g<range_; g++) {
+        qDebug() << array[g];
     }
 
     for (int g=0; g<range_; g++) {
@@ -402,6 +405,7 @@ void MainWindow::item_num(int range_, int num) { // random number para sa random
         if (chosen_diff == "questionsEasy") {
             qry.prepare("SELECT * FROM questionsEasy WHERE ID = ?");
             qry.bindValue(0, temp_q_id);
+//            qry.bindValue(1, chosen_cat_id);
             if (qry.exec()) {
                 if (qry.next()) {
 
@@ -445,7 +449,7 @@ void MainWindow::item_num(int range_, int num) { // random number para sa random
                 }
             }
         }
-        qDebug() << "a";
+//        qDebug() << "a";
     }
     ui->MainStack->setCurrentIndex(5);
     ui->caLbl->setText(QString::number(korik));
@@ -457,11 +461,11 @@ void MainWindow::on_readyBtn_clicked()
 {
     ui->MainStack->setCurrentIndex(3);
     ::show_note(chosen_cat_id);
-    qDebug() << chosen_cat;
+//    qDebug() << chosen_cat;
     ui->categoryLbl->setText(chosen_cat);
     ui->scoreNum->setText(QString::number(score));
 //    qDebug() << q_item -1 << quesnum;
-    item_num(q_item -1, quesnum);
+    item_num(chosen_diff, q_item-1, quesnum);
 //    timer_();
 }
 
@@ -484,7 +488,7 @@ void MainWindow::timer_() {
     }
 
     int i = 0;
-    qDebug() << chosen_diff;
+//    qDebug() << chosen_diff;
     while(i < num+1) {
         ui->timeText->setText(QString::number(num-i));
         delay();
@@ -493,11 +497,11 @@ void MainWindow::timer_() {
         } else if (chosen_diff == "questionsEasy") {
             if (ui->trueBtn->styleSheet() != "background:rgb(85, 0, 255);\ncolor:white;" ||
                        ui->falseBtn->styleSheet() != "background:rgb(85, 0, 255);\ncolor:white;") {
-                qDebug() << "as";
+//                qDebug() << "as";
                 if (users_ans_e == db_temp_ans_e) {
     //                    score++;
                     korik++;
-                    qDebug() << num;
+//                    qDebug() << num;
                     if (num-i >= 2*num_f/3) {
                         score += 3;
                     } else if (num-i >= num_f/3) {
@@ -529,8 +533,8 @@ void MainWindow::timer_() {
                     ui->bBtn->styleSheet() != "background:rgb(170, 85, 255);color:black" ||
                     ui->cBtn->styleSheet() != "background:rgb(170, 85, 255);color:black" ||
                     ui->dbtn->styleSheet() != "background:rgb(170, 85, 255);color:black") {
-                qDebug() << "as";
-                qDebug() << users_ans_m << db_temp_ans_m;
+//                qDebug() << "as";
+//                qDebug() << users_ans_m << db_temp_ans_m;
                 if (users_ans_m == db_temp_ans_m) {
     //                    score++;
                     korik++;
@@ -596,15 +600,6 @@ void MainWindow::timer_() {
                 i += 1;
             }
         }
-
-
-
-//        else if (ui->trueBtn->styleSheet() != "background:rgb(85, 0, 255);\ncolor:white;" ||
-//                   ui->falseBtn->styleSheet() != "background:rgb(85, 0, 255);\ncolor:white;") {
-
-//        } else {
-//            i += 1;
-//        }
     }
     ui->scoreNum->setText(QString::number(score));
     delay();
@@ -706,11 +701,11 @@ void MainWindow::showleaderboard(int cat_id, QString cat, QString diff, int q_nu
         qDebug() << list_name[i];
     }
 
-    qDebug() << list_score->at(0) << "lol";
-    qDebug() << list_score->at(1) << "lol";
-    qDebug() << list_score->at(2) << "lol";
-    qDebug() << list_score->at(3) << "lol";
-    qDebug() << list_score->at(4) << "lol";
+//    qDebug() << list_score->at(0) << "lol";
+//    qDebug() << list_score->at(1) << "lol";
+//    qDebug() << list_score->at(2) << "lol";
+//    qDebug() << list_score->at(3) << "lol";
+//    qDebug() << list_score->at(4) << "lol";
 
     QString name_l;
     int score_l;
@@ -734,26 +729,6 @@ void MainWindow::showleaderboard(int cat_id, QString cat, QString diff, int q_nu
         i++;
     }
 }
-
-//QSqlQuery qry1;
-//qry1.prepare("SELECT * FROM category WHERE owner_id = ?");
-//qry1.bindValue(0, user_id);
-//if (qry1.exec()) {
-//    int i = 0;
-//    while (qry1.next() && i < ui->editList->rowCount()) {
-//        cat_id = qry1.value(0).toInt();
-//        db_cat = qry1.value(1).toString();
-//        QTableWidgetItem *item;
-//        for (int j = 0; j < ui->editList->columnCount(); j++) {
-//            item = new QTableWidgetItem;
-//            if (j==0) {
-//                item->setText(db_cat);
-//            }
-//            ui->editList->setItem(i, j, item);
-//        }
-//        i++;
-//    }
-//}
 
 
 //show category
@@ -812,10 +787,7 @@ void MainWindow::on_catCBox_activated(int index)
 {
     chosen_cat_id = index + 1;
 
-//    maxnum(chosen_diff, chosen_cat_id);
-    qDebug() << chosen_cat_id;
     Showdiff(chosen_cat_id);
-//    chosen_diff = ui->diffCBox->currentText();
     QString testType = ui->diffCBox->currentText();
     if (testType == "True or False") {
         chosen_diff = "questionsEasy";
@@ -826,7 +798,6 @@ void MainWindow::on_catCBox_activated(int index)
     }
     maxnum(chosen_diff, chosen_cat_id);
     ui->quesnumCBox->setCurrentIndex(0);
-//    qDebug() << chosen_diff;
 }
 
 void MainWindow::on_diffCBox_activated(int index)
@@ -1337,9 +1308,9 @@ void MainWindow::on_nextBtn_2_clicked()
 
 void MainWindow::on_nextBtn_clicked()
 {
-//    qDebug() << chosen_cat_id;
-//    qDebug() << chosen_diff;
-//    qDebug() << q_item;
+    qDebug() << chosen_cat_id;
+    qDebug() << chosen_diff;
+    qDebug() << q_item;
     ui->MainStack->setCurrentIndex(2);
 
     if (chosen_diff == "questionsEasy") {

@@ -120,7 +120,7 @@ private slots:
 
     void on_catCBox_activated(int index);
 
-    void item_num(int range_, int num);
+    void item_num(QString diff_, int range_, int num);
 
     void on_comboBox_activated(int index);
 

@@ -24,7 +24,6 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -149,7 +148,6 @@ public:
     QLineEdit *dlineEdit;
     QWidget *identiStacked;
     QLineEdit *hardLineEdit;
-    QTextEdit *textEdit;
     QPushButton *addBtn;
     QComboBox *difficultyCBox;
     QPushButton *addSaveBtn;
@@ -254,7 +252,8 @@ public:
         diffCBox = new QComboBox(categorypg);
         diffCBox->setObjectName("diffCBox");
         diffCBox->setGeometry(QRect(90, 180, 181, 31));
-        diffCBox->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.7)"));
+        diffCBox->setStyleSheet(QString::fromUtf8("background: #9754cb;\n"
+"color: rgba(255,255,255,0.7)"));
         nextBtn = new QPushButton(categorypg);
         nextBtn->setObjectName("nextBtn");
         nextBtn->setGeometry(QRect(260, 350, 93, 29));
@@ -269,12 +268,14 @@ public:
         quesnumCBox = new QComboBox(categorypg);
         quesnumCBox->setObjectName("quesnumCBox");
         quesnumCBox->setGeometry(QRect(90, 240, 181, 31));
-        quesnumCBox->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.7)"));
+        quesnumCBox->setStyleSheet(QString::fromUtf8("background: #9754cb;\n"
+"color: rgba(255,255,255,0.7)"));
         quesnumCBox->setEditable(false);
         catCBox = new QComboBox(categorypg);
         catCBox->setObjectName("catCBox");
         catCBox->setGeometry(QRect(90, 130, 171, 26));
-        catCBox->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.7)"));
+        catCBox->setStyleSheet(QString::fromUtf8("background: #9754cb;\n"
+"color: rgba(255,255,255,0.7)"));
         nextBtn_2 = new QPushButton(categorypg);
         nextBtn_2->setObjectName("nextBtn_2");
         nextBtn_2->setGeometry(QRect(30, 350, 93, 29));
@@ -288,7 +289,8 @@ public:
         readyBtn->setObjectName("readyBtn");
         readyBtn->setGeometry(QRect(260, 290, 80, 31));
         readyBtn->setFont(font3);
-        readyBtn->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.8)"));
+        readyBtn->setStyleSheet(QString::fromUtf8("background:#9754cb;\n"
+"color: rgba(255,255,255,0.8)"));
         instrucLbl = new QLabel(readypg);
         instrucLbl->setObjectName("instrucLbl");
         instrucLbl->setGeometry(QRect(70, 110, 231, 161));
@@ -302,7 +304,8 @@ public:
         ibackBtn->setObjectName("ibackBtn");
         ibackBtn->setGeometry(QRect(20, 60, 80, 31));
         ibackBtn->setFont(font3);
-        ibackBtn->setStyleSheet(QString::fromUtf8("color: rgba(255,255,255,0.7)"));
+        ibackBtn->setStyleSheet(QString::fromUtf8("background: #9754cb;\n"
+";color: rgba(255,255,255,0.7)"));
         MainStack->addWidget(readypg);
         quizpg = new QWidget();
         quizpg->setObjectName("quizpg");
@@ -443,6 +446,8 @@ public:
         nameLbl->setObjectName("nameLbl");
         nameLbl->setGeometry(QRect(70, 250, 51, 20));
         nameLbl->setFont(font3);
+        nameLbl->setStyleSheet(QString::fromUtf8("\n"
+"color: rgba(255,255,255,0.8)"));
         caLbl = new QLabel(resultspg);
         caLbl->setObjectName("caLbl");
         caLbl->setGeometry(QRect(130, 129, 131, 31));
@@ -456,6 +461,8 @@ public:
         scrLbl->setObjectName("scrLbl");
         scrLbl->setGeometry(QRect(70, 180, 71, 16));
         scrLbl->setFont(font3);
+        scrLbl->setStyleSheet(QString::fromUtf8("\n"
+"color: rgba(255,255,255,0.8)"));
         remarksLbl = new QLabel(resultspg);
         remarksLbl->setObjectName("remarksLbl");
         remarksLbl->setGeometry(QRect(120, 50, 151, 31));
@@ -467,6 +474,8 @@ public:
         caText->setObjectName("caText");
         caText->setGeometry(QRect(70, 100, 121, 21));
         caText->setFont(font3);
+        caText->setStyleSheet(QString::fromUtf8("\n"
+"color: rgba(255,255,255,0.8)"));
         scre = new QLabel(resultspg);
         scre->setObjectName("scre");
         scre->setGeometry(QRect(130, 200, 131, 31));
@@ -773,9 +782,6 @@ public:
         hardLineEdit->setObjectName("hardLineEdit");
         hardLineEdit->setGeometry(QRect(20, 30, 281, 41));
         hardLineEdit->setStyleSheet(QString::fromUtf8("color:white"));
-        textEdit = new QTextEdit(identiStacked);
-        textEdit->setObjectName("textEdit");
-        textEdit->setGeometry(QRect(50, 50, 104, 85));
         optionCBox->addWidget(identiStacked);
         addBtn = new QPushButton(addpg);
         addBtn->setObjectName("addBtn");
@@ -877,6 +883,8 @@ public:
         aubackBtn->setObjectName("aubackBtn");
         aubackBtn->setGeometry(QRect(140, 320, 80, 21));
         aubackBtn->setFont(font3);
+        aubackBtn->setStyleSheet(QString::fromUtf8("background:#9754cb;\n"
+"color: white"));
         label = new QLabel(aboutuspg);
         label->setObjectName("label");
         label->setGeometry(QRect(70, 100, 221, 151));
@@ -907,7 +915,7 @@ public:
         diffStacked->setCurrentIndex(0);
         ls_box->setCurrentIndex(0);
         addeditStack->setCurrentIndex(1);
-        optionCBox->setCurrentIndex(0);
+        optionCBox->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

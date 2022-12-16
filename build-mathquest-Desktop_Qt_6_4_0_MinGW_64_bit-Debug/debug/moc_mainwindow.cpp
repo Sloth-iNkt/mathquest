@@ -311,16 +311,16 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
       51,    0,  426,    2, 0x08,   53 /* Private */,
       52,    0,  427,    2, 0x08,   54 /* Private */,
       53,    1,  428,    2, 0x08,   55 /* Private */,
-      54,    2,  431,    2, 0x08,   57 /* Private */,
-      57,    1,  436,    2, 0x08,   60 /* Private */,
-      58,    1,  439,    2, 0x08,   62 /* Private */,
-      59,    1,  442,    2, 0x08,   64 /* Private */,
-      60,    1,  445,    2, 0x08,   66 /* Private */,
-      62,    0,  448,    2, 0x08,   68 /* Private */,
-      63,    1,  449,    2, 0x08,   69 /* Private */,
-      64,    1,  452,    2, 0x08,   71 /* Private */,
-      65,    4,  455,    2, 0x08,   73 /* Private */,
-      69,    0,  464,    2, 0x08,   78 /* Private */,
+      54,    3,  431,    2, 0x08,   57 /* Private */,
+      57,    1,  438,    2, 0x08,   61 /* Private */,
+      58,    1,  441,    2, 0x08,   63 /* Private */,
+      59,    1,  444,    2, 0x08,   65 /* Private */,
+      60,    1,  447,    2, 0x08,   67 /* Private */,
+      62,    0,  450,    2, 0x08,   69 /* Private */,
+      63,    1,  451,    2, 0x08,   70 /* Private */,
+      64,    1,  454,    2, 0x08,   72 /* Private */,
+      65,    4,  457,    2, 0x08,   74 /* Private */,
+      69,    0,  466,    2, 0x08,   79 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -372,7 +372,7 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,   15,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   55,   56,
+    QMetaType::Void, QMetaType::QString, QMetaType::Int, QMetaType::Int,   26,   55,   56,
     QMetaType::Void, QMetaType::Int,   15,
     QMetaType::Void, QMetaType::Int,   15,
     QMetaType::Void, QMetaType::Int,   15,
@@ -502,6 +502,7 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'item_num'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'on_comboBox_activated'
@@ -591,7 +592,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 46: _t->on_falseBtn_clicked(); break;
         case 47: _t->on_leadsubmitBtn_clicked(); break;
         case 48: _t->on_catCBox_activated((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 49: _t->item_num((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
+        case 49: _t->item_num((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[3]))); break;
         case 50: _t->on_comboBox_activated((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 51: _t->on_comboBox_2_activated((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 52: _t->on_comboBox_3_activated((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
